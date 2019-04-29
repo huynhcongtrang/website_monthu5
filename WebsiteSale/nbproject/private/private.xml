@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Service_model.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Advisory_model.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Comment_product_model.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/core/My_model.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Banner_model.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/head.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/home/index.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Product_model.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/controllers/Product.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/core/Database.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Project_model.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/header.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/foot.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/helper/common_helper.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/layout.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/footer.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/core/My_controller.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/controllers/Home.php</file>
+        </group>
+    </open-files>
+</project-private>
