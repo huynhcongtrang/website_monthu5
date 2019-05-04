@@ -1,6 +1,6 @@
 <?php
 
-require'application/core/My_controller.php';
+include 'application\core\My_controller.php';
 
 class Product extends My_controller {
 

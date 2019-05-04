@@ -1,8 +1,9 @@
 <?php
-require 'application\models\Product_Model.php';
-require 'application\models\Catalog_Model.php';
-require 'application\models\Advisory_Model.php';
-require 'application\models\Banner_Model.php';
+include 'application\models\Product_model.php';
+include 'application\models\Catalog_Model.php';
+include 'application\models\Advisory_Model.php';
+include 'application\models\Banner_Model.php';
+session_start();
 class My_controller {
     public $data = array();
     public function __construct() {

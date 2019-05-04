@@ -1,12 +1,13 @@
-<script src="<?php echo public_url()?>/assets/js/jquery-ui.js"></script>
-<link type="text/css" href="<?php echo public_url()?>/assets/js/jquery-ui.css" rel="stylesheet">	
+<script src="<?php echo public_url() ?>/assets/js/jquery-ui.js"></script>
+<link type="text/css" href="<?php echo public_url() ?>/assets/js/jquery-ui.css" rel="stylesheet">
+<script src="<?php echo public_url() ?>/assets/js/Login.js"></script>
 <script>
-    
-$(function() {
-    $("#search_pro").autocomplete({
-        source: <?php echo $data['product_list_search'];?>
+
+    $(function () {
+        $("#search_pro").autocomplete({
+            source: <?php echo $data['product_list_search']; ?>
+        });
     });
-});
 </script>
 <div class="header__top-bar">
     <div class="container">
@@ -30,40 +31,52 @@ $(function() {
                     </ul>
                 </div>
             </div>
+
             <div class="col-6">
                 <div class="header__function function">
                     <ul class="function__list">
-                        <li class="function__item"><a href="#login-form" class="function__link open-popup-link"><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
-                            <div id="login-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-sign-in-alt"></i>
-                                <h4>Đăng nhập</h4><button type="button" class="mfp-close">x</button>
-                                <form action="" method="">
+                        <?php if (!isset($_SESSION['id_user'])): ?>
+                            <li class="function__item"><a href="#login-form" class="function__link open-popup-link"><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
+                                <div id="login-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-sign-in-alt"></i>
+                                    <h4>Đăng nhập</h4><button type="button" class="mfp-close">x</button>
                                     <div class="form-group"><input type="email" id="email-login" name="email-login" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
-                                    <div class="form-group"><input type="password" id="password-login" name="password-login" placeholder="Nhập vào mật khẩu" required="required" /></div><button type="submit" class="button-submit">Đăng nhập</button>
-                                </form>
-                                <ul class="list-link">
-                                    <li><a href="#forgot-password" class="link open-popup-link">Quên mật khẩu</a></li>
-                                    <li><a href="#register-form" class="link open-popup-link">Đăng ký tài khoản</a></li>
-                                </ul>
-                            </div>
-                            <div id="register-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-edit"></i>
-                                <h4>Đăng ký</h4><button type="button" class="mfp-close">x</button>
-                                <form action="" method="">
-                                    <div class="form-group"><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
-                                    <div class="form-group"><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
-                                    <div class="form-group"><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
-                                    <div class="form-group"><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div><button type="submit" class="button-submit">Đăng ký</button>
-                                </form>
-                                <ul class="list-link">
-                                    <li><a href="#login-form" class="link open-popup-link">Đã có tài khoản</a></li>
-                                </ul>
-                            </div>
-                            <div id="forgot-password" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-unlock-alt"></i>
-                                <h4>Khôi phục mật khẩu</h4><button type="button" class="mfp-close">x</button>
-                                <form action="" method="">
-                                    <div class="form-group"><input type="email" id="email-password" name="email-password" placeholder="Nhập vào địa chỉ Email" required="required" /></div><button type="submit" class="button-submit">Yêu cầu mật khẩu mới</button>
-                                </form>
-                            </div>
-                        </li>
+                                    <div class="form-group"><input type="password" id="password-login" name="password-login" placeholder="Nhập vào mật khẩu" required="required" /></div>
+                                    <p id="error-display"></p>
+                                    <button type="submit" class="button-submit" id="submit-login" onclick="trang()">Đăng nhập</button>
+                                    <ul class="list-link">
+                                        <li><a href="#forgot-password" class="link open-popup-link">Quên mật khẩu</a></li>
+                                        <li><a href="#register-form" class="link open-popup-link">Đăng ký tài khoản</a></li>
+                                    </ul>
+                                </div>
+                                <div id="register-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-edit"></i>
+                                    <h4>Đăng ký</h4><button type="button" class="mfp-close">x</button>
+                                    <form action="" method="">
+                                        <div class="form-group"><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
+                                        <div class="form-group"><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
+                                        <div class="form-group"><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
+                                        <div class="form-group"><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div><button type="submit" class="button-submit">Đăng ký</button>
+                                    </form>
+                                    <ul class="list-link">
+                                        <li><a href="#login-form" class="link open-popup-link">Đã có tài khoản</a></li>
+                                    </ul>
+                                </div>
+                                <div id="forgot-password" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-unlock-alt"></i>
+                                    <h4>Khôi phục mật khẩu</h4><button type="button" class="mfp-close">x</button>
+                                    <form action="" method="post">
+                                        <div class="form-group"><input type="email" id="email-password" name="email-password" placeholder="Nhập vào địa chỉ Email" required="required" /></div><button type="submit" class="button-submit">Yêu cầu mật khẩu mới</button>
+                                    </form>
+                                </div>
+                            </li>
+                        <?php else : ?>
+                            <li class="function__item"><a href="javascript:void(0)" class="function__link"><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
+                                <div class="function__content function-hover">
+                                    <ul class="function-hover__list">
+                                        <li class="function-hover__item"><a href="#" class="link">Tài khoản</a></li>
+                                        <li class="function-hover__item"><a href="<?php echo getFullHost() . '/user/logout'; ?>" class="link">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <?php endif; ?>
                         <li class="function__item"><a href="#" class="function__link"><i class="function__icon fas fa-shopping-cart"></i><span class="function__number function__span">0 Sản phẩm</span></a>
                             <div class="function__content">
                                 <div class="product__show">
@@ -111,8 +124,8 @@ $(function() {
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="box-header">
-                    <div class="box-header__logo"><a href="<?php echo getFullHost().'/Home/index'; ?>" class="box-header__link"><img src="<?php echo public_url() ?>/assets/images/logo.png" alt="vnbuilding logo" /></a></div>
-                    <div class="box-header__text"><a href="<?php echo getFullHost().'/Home/index'; ?>" class="box-header__link"><img src="<?php echo public_url() ?>/assets/images/header/logan.png" alt="vnbuilding logan" /></a>
+                    <div class="box-header__logo"><a href="<?php echo getFullHost() . '/Home/index'; ?>" class="box-header__link"><img src="<?php echo public_url() ?>/assets/images/logo.png" alt="vnbuilding logo" /></a></div>
+                    <div class="box-header__text"><a href="<?php echo getFullHost() . '/Home/index'; ?>" class="box-header__link"><img src="<?php echo public_url() ?>/assets/images/header/logan.png" alt="vnbuilding logan" /></a>
                         <p class="box-header__description">Nhà cung cấp rọ đá lớn nhất và rẻ nhất tại Việt Nam</p>
                     </div>
                 </div>
@@ -168,20 +181,20 @@ $(function() {
                 <nav class="navigation">
                     <ul class="navigation__list">
 
-                        <li class="navigation__item navigation__active"><a href="<?php echo getFullHost().'/Home/index'; ?>" class="navigation__link">Trang chủ</a></li>
+                        <li class="navigation__item navigation__active"><a href="<?php echo getFullHost() . '/Home/index'; ?>" class="navigation__link">Trang chủ</a></li>
                         <li class="navigation__item"><a href="#" class="navigation__link">Giới thiệu</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost().'/Product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
+                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/Product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
                         <li class="navigation__item"><a href="#" class="navigation__link">Dịch vụ</a></li>
                         <li class="navigation__item"><a href="#" class="navigation__link">Dự án tiêu biểu</a></li>
                         <li class="navigation__item"><a href="#" class="navigation__link">Liên hệ</a></li>
                     </ul>
                     <div class="navigation__block-form">
-                        <form action="<?php echo  getFullHost()."/Home/search/"; ?>" method="get"   class="navigation__form"><input type="text" id="search_pro" name="search_product" value="<?php echo isset($_GET['search_product'])?$_GET['search_product']:'';?>" placeholder="Search..." class="navigation__input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"/><button type="submit" class="navigation__submit"><i class="navigation__icon flaticon-search"></i></button></form>
+                        <form action="<?php echo getFullHost() . "/Home/search/"; ?>" method="get"   class="navigation__form"><input type="text" id="search_pro" name="search_product" value="<?php echo isset($_GET['search_product']) ? $_GET['search_product'] : ''; ?>" placeholder="Search..." class="navigation__input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"/><button type="submit" class="navigation__submit"><i class="navigation__icon flaticon-search"></i></button></form>
                     </div>
                 </nav>
                 <div data-slidesToShow="1" data-slidesToScroll="1" data-dots="1" data-arrows="1" data-autoplay="1" class="comp-slider-header slider__list slider-general__list comp-slider">
                     <?php foreach ($data['banner'] as $ban): ?>
-                        <figure class="slider-item"><a href="#" class="slider-item__link"><img src="<?php echo public_url('/assets/images/slider/').$ban->image ?>" alt="vnbuilding slider" class="slider-item__image" /></a>
+                        <figure class="slider-item"><a href="#" class="slider-item__link"><img src="<?php echo public_url('/assets/images/slider/') . $ban->image ?>" alt="vnbuilding slider" class="slider-item__image" /></a>
                         </figure>
                     <?php endforeach; ?>
                 </div>
