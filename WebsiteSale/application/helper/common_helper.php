@@ -59,3 +59,4 @@ function get_rgetment($local) {
     $uriArray = explode('/', $uri);
     return $page_url = $uriArray[$local];
 }
+

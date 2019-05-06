@@ -1,6 +1,7 @@
 <script src="<?php echo public_url() ?>/assets/js/jquery-ui.js"></script>
 <link type="text/css" href="<?php echo public_url() ?>/assets/js/jquery-ui.css" rel="stylesheet">
 <script src="<?php echo public_url() ?>/assets/js/Login.js"></script>
+<script src="<?php echo public_url() ?>/assets/js/Register.js"></script>
 <script>
 
     $(function () {
@@ -36,26 +37,35 @@
                 <div class="header__function function">
                     <ul class="function__list">
                         <?php if (!isset($_SESSION['id_user'])): ?>
-                            <li class="function__item"><a href="#login-form" class="function__link open-popup-link"><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
+                        <li class="function__item"><a href="#login-form" id="click-login" class="function__link open-popup-link"><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
                                 <div id="login-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-sign-in-alt"></i>
                                     <h4>Đăng nhập</h4><button type="button" class="mfp-close">x</button>
+                                    <p class="annount-cong"></p>
                                     <div class="form-group"><input type="email" id="email-login" name="email-login" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
                                     <div class="form-group"><input type="password" id="password-login" name="password-login" placeholder="Nhập vào mật khẩu" required="required" /></div>
-                                    <p id="error-display"></p>
+                                    <p class="error-display" id="error-display-login"></p>
                                     <button type="submit" class="button-submit" id="submit-login" onclick="trang()">Đăng nhập</button>
                                     <ul class="list-link">
                                         <li><a href="#forgot-password" class="link open-popup-link">Quên mật khẩu</a></li>
-                                        <li><a href="#register-form" class="link open-popup-link">Đăng ký tài khoản</a></li>
+                                        <li><a href="#register-form" class="link open-popup-link" id="link-register">Đăng ký tài khoản</a></li>
                                     </ul>
                                 </div>
                                 <div id="register-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-edit"></i>
                                     <h4>Đăng ký</h4><button type="button" class="mfp-close">x</button>
-                                    <form action="" method="">
-                                        <div class="form-group"><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
-                                        <div class="form-group"><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
-                                        <div class="form-group"><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
-                                        <div class="form-group"><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div><button type="submit" class="button-submit">Đăng ký</button>
-                                    </form>
+                                    <div class="form-group"><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
+                                    <p class="error-display-detail" id="error-display-name"></p>
+                                    <div class="form-group"><input type="text" id="phone-register" name="phone-register" placeholder="Nhập vào số điện thoại của bạn" required="required" /></div>
+                                    <p class="error-display-detail" id="error-display-phone"></p>
+                                    <div class="form-group"><input type="text" id="address-register" name="address-register" placeholder="Nhập vào địa chỉ của bạn" required="required" /></div>
+                                    <p class="error-display-detail" id="error-display-address"></p>
+                                    <div class="form-group"><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
+                                    <p class="error-display-detail" id="error-display-email"></p>
+                                    <div class="form-group"><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
+                                    <p class="error-display-detail" id="error-display-password"></p>
+                                    <div class="form-group"><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div>
+                                    <p class="error-display-detail" id="error-display-repassword"></p>
+                                    <p class="error-display" id="error-display-register"></p>
+                                    <button type="submit" class="button-submit" id="submit-register">Đăng ký</button>
                                     <ul class="list-link">
                                         <li><a href="#login-form" class="link open-popup-link">Đã có tài khoản</a></li>
                                     </ul>
@@ -68,7 +78,7 @@
                                 </div>
                             </li>
                         <?php else : ?>
-                            <li class="function__item"><a href="javascript:void(0)" class="function__link"><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
+                            <li class="function__item"><a href="javascript:void(0)" class="function__link" ><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
                                 <div class="function__content function-hover">
                                     <ul class="function-hover__list">
                                         <li class="function-hover__item"><a href="#" class="link">Tài khoản</a></li>
