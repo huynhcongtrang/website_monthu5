@@ -49,11 +49,12 @@ Class My_model extends Database{
         return $this;
     }
 //
-//    public function update() {
-//        $sql = "update " . $this->table  . " set " . $this->queryParams["value"] . " " . $this->buildCondition($this->queryParams["where"]);
-//        // var_dump($sql) ; die() ; 
-//        return $this->query($sql);
-//    }
+    public function update() {
+        $sql = "update " . $this->table  . " set " . $this->queryParams["values"] . " " . $this->buildCondition($this->queryParams["where"]);
+        // var_dump($sql) ; die() ; 
+        $this->setQuery($sql);
+        return $this;
+    }
 //
 //    public function delete() {
 //        $sql = "delete from " . $this->table  . $this->buildCondition($this->queryParams["where"]) . " " . $this->queryParams["other"];

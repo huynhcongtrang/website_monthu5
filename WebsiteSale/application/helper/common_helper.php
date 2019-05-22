@@ -60,3 +60,11 @@ function get_rgetment($local) {
     return $page_url = $uriArray[$local];
 }
 
+function format_content($data) {
+    $array_content = explode("-", $data);
+    foreach ($array_content as $con){
+        echo '<br>';
+        echo "<li>- ".$con."</li>";
+        
+    }
+}

@@ -9,7 +9,6 @@
         function isName(name) {
             var regex = /^[a-zA-Z]+$/;
             return regex.test(name);
-
         }
         function isAddress(address) {
             var regex = /^[0-9\-\(\)\s]+$/;
@@ -21,8 +20,7 @@
             return regex.test(phone);
         }
 
-
-        $(".mfp-close").click(function () {
+        $("#click-login").click(function () {
             $("#error-display-name").text("");
             $("#error-display-email").text("");
             $("#error-display-address").text("");
@@ -90,7 +88,6 @@
                 check = false;
             } else {
                 $("#error-display-repassword").text("");
-
             }
             if (check == false) {
                 return;
@@ -120,7 +117,7 @@
                             $("#error-display-email").text("Email đã tồn tại !");
                         }
                         if (data.check == 2) {
-                              $("#error-display-phone").text("Số điện thoại đã tồn tại !");
+                            $("#error-display-phone").text("Số điện thoại đã tồn tại !");
                         }
                     }
                 }

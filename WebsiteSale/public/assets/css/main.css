@@ -1396,11 +1396,13 @@ section+section {
 .box-info .box-info__link:hover:after {
     width: 100%
 }
-
+.distance_top{
+    margin-bottom: 3rem
+}
 .box-wrapper .box-wrapper__head {
     overflow-x: hidden;
     position: relative;
-    margin-bottom: 3rem
+    margin-bottom: 3rem;
 }
 
 .box-wrapper .box-wrapper__block-title {
@@ -3350,4 +3352,118 @@ section+section {
     text-align: center;
     margin-bottom: 10px;
     color: #0066ff;
+}
+
+.recover {
+    min-height: 38.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.recover__component {
+    width: 55.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #1c1e21;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4)
+}
+
+.recover__title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ccc
+}
+
+.recover__des {
+    font-size: 1.3rem;
+    margin-top: .5rem;
+    margin-bottom: 2rem
+}
+
+.recover__content {
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem
+}
+
+.recover__input {
+    font-size: 2.6rem;
+    height: 4rem
+}
+
+.recover__text--right {
+    text-align: right
+}
+
+.recover__send {
+    display: inline-block;
+    text-align: initial
+}
+
+.recover__send>.recover__strong {
+    font-size: 1.3rem;
+    font-weight: 500
+}
+
+.recover__send>.recover__email {
+    font-size: 1.3rem;
+    word-break: break-word;
+    padding-top: 4px
+}
+
+.recover__bottom {
+    border-top: 1px solid #ccc;
+    padding: 0.8rem 1rem;
+    text-align: right
+}
+
+.recover__bottom>.btn {
+    font-size: 1.3rem
+}
+
+.recover__bottom>.btn+.btn {
+    margin-left: 5px
+}
+
+.recover__list-form>.recover__form-group+.recover__form-group {
+    margin-top: 1.5rem
+}
+
+.recover__list-form>.recover__form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.recover__list-form>.recover__form-group>.recover__label {
+    font-size: 1.4rem;
+    padding: 1.1rem;
+    min-width: 15rem
+}
+
+.recover__list-form>.recover__form-group>.recover__input {
+    max-width: 50%;
+    font-size: 1.4rem
+}
+.wating_moment{
+    
+    display: none;
+}
+.error-display-change{
+    margin-left: 50px;
 }

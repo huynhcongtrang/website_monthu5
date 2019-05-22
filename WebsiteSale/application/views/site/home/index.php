@@ -43,7 +43,7 @@
                         <div class="col-3">
                             <div class="box-product box-product--product">
                                 <div class="box-product__image"><img src="<?php echo public_url('/assets/images/section-products/') . $product->image_link ?>" alt="Rọ đá vnbuilding" class="box-product__photo">
-                                    <div class="box-product__buttons"><button type="button" class="box-product__button box-product__button--button">Thêm vào giỏ hàng</button><a href="#" class="box-product__button box-product__button--link">Xem chi tiết</a></div>
+                                    <div class="box-product__buttons"><button type="button" class="box-product__button box-product__button--button">Thêm vào giỏ hàng</button><a href="<?php echo getFullHost() . '/product/view-detail/' . $product->id ?>" class="box-product__button box-product__button--link">Xem chi tiết</a></div>
                                     <?php if ($product->discount > 0): ?>
                                         <span class="box-product__onsale">-<?php echo $product->discount ?>%</span>
                                     <?php endif; ?>
@@ -101,21 +101,21 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="box-product box-product--project box-product--custom-title box-product--hover">
-                            <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/').$data['project_list'][0]->image_link?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                            <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/') . $data['project_list'][0]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
                             <div class="box-product__content">
-                                <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][0]->name?></a></h3>
-                                <p class="box-product__description"><?php echo $data['project_list'][0]->introduce?></p>
+                                <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][0]->name ?></a></h3>
+                                <p class="box-product__description"><?php echo $data['project_list'][0]->introduce ?></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="box-product__list">
-                            <?php for($i = 0 ; $i < 3 ; $i++): ?>
+                            <?php for ($i = 0; $i < 3; $i++): ?>
                                 <div class="box-product box-product--hover">
-                                    <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/').$data['project_list'][$i]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                    <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/') . $data['project_list'][$i]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
                                     <div class="box-product__content">
-                                        <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name?></a></h3>
-                                        <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce?></p>
+                                        <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name ?></a></h3>
+                                        <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce ?></p>
                                     </div>
                                 </div>
                             <?php endfor; ?>
@@ -123,12 +123,12 @@
                     </div>
                     <div class="col-4">
                         <div class="box-product__list">
-                             <?php for($i = 3 ; $i < 6 ; $i++): ?>
+                            <?php for ($i = 3; $i < 6; $i++): ?>
                                 <div class="box-product box-product--hover">
-                                    <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/').$data['project_list'][$i]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                    <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/') . $data['project_list'][$i]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
                                     <div class="box-product__content">
-                                        <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name?></a></h3>
-                                        <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce?></p>
+                                        <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name ?></a></h3>
+                                        <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce ?></p>
                                     </div>
                                 </div>
                             <?php endfor; ?>
