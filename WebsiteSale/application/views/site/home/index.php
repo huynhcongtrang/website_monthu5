@@ -30,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             </section>
             <section class="box-wrapper section-products">
                 <div class="box-wrapper__head">
@@ -56,6 +57,33 @@
                                             <div class="box-product__comment"><i class="box-product__icon flaticon-support"></i><a href="<?php echo getFullHost() . '/product/view-detail/' . $product->id ?>" class="box-product__link box-product__link--vc"><?php echo $product->totalcommnet ?> Bình luận</a></div>
                                         </div>
                                         <div class="box-product__circles"><i class="icon fas fa-circle blue"></i><i class="icon fas fa-circle orange"></i><i class="icon fas fa-circle red"></i><i class="icon fas fa-circle yellow"></i><i class="icon fas fa-circle black"></i></div>
+=======
+            </div>
+        </section>
+        <section class="box-wrapper section-products">
+            <div class="box-wrapper__head">
+                <div class="box-wrapper__block-title">
+                    <h3 class="box-wrapper__title">Sản phẩm nổi bật</h3>
+                </div><a href="Product?action=product_list" class="box-wrapper__link">Xem thêm</a>
+            </div>
+            <div class="box_wrapper__content">
+                <div class="row">
+                    <?php foreach ($data['product_list'] as $product): ?>
+                        <div class="col-3">
+                            <div class="box-product box-product--product">
+                                <div class="box-product__image"><img src="<?php echo public_url('/assets/images/section-products/') . $product->image_link ?>" alt="Rọ đá vnbuilding" class="box-product__photo">
+                                    <div class="box-product__buttons"><button type="button" class="box-product__button box-product__button--button">Thêm vào giỏ hàng</button><a href="<?php echo getFullHost() . '/product/view-detail/' . $product->id ?>" class="box-product__button box-product__button--link">Xem chi tiết</a></div>
+                                    <?php if ($product->discount > 0): ?>
+                                        <span class="box-product__onsale">-<?php echo $product->discount ?>%</span>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="box-product__content">
+                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $product->name ?></a></h3>
+                                    <div class="box-product__price"><span class="box-product__new-price"><?php echo number_format($product->price * (100 - $product->discount) / 100) ?>₫</span><span class="box-product__old-price"><?php echo number_format($product->price) ?>₫</span></div>
+                                    <div class="box-product__view-comment">
+                                        <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc"><?php echo $product->view ?> Lượt xem</a></div>
+                                        <div class="box-product__comment"><i class="box-product__icon flaticon-support"></i><a href="#" class="box-product__link box-product__link--vc"><?php echo $product->totalcommnet ?> Bình luận</a></div>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                     </div>
                                 </div>
                             </div>
@@ -90,6 +118,7 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
+<<<<<<< HEAD
             </section>
             <section class="box-wrapper section-projects">
                 <div class="box-wrapper__head">
@@ -117,10 +146,40 @@
                                             <h3 class="box-product__title"><a href="<?php echo getFullHost()."/project/project_detail/".$data['project_list'][$i]->id?>" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name ?></a></h3>
                                             <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce ?></p>
                                         </div>
+=======
+            </div>
+        </section>
+        <section class="box-wrapper section-projects">
+            <div class="box-wrapper__head">
+                <div class="box-wrapper__block-title">
+                    <h3 class="box-wrapper__title">Dự án tiêu biểu</h3>
+                </div><a href="" class="box-wrapper__link">Xem thêm</a>
+            </div>
+            <div class="box_wrapper__content">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="box-product box-product--project box-product--custom-title box-product--hover">
+                            <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/') . $data['project_list'][0]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                            <div class="box-product__content">
+                                <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][0]->name ?></a></h3>
+                                <p class="box-product__description"><?php echo $data['project_list'][0]->introduce ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="box-product__list">
+                            <?php for ($i = 0; $i < 3; $i++): ?>
+                                <div class="box-product box-product--hover">
+                                    <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/') . $data['project_list'][$i]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                    <div class="box-product__content">
+                                        <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name ?></a></h3>
+                                        <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce ?></p>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                     </div>
                                 <?php endfor; ?>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="col-4">
                             <div class="box-product__list">
                                 <?php for ($i = 3; $i < 6; $i++): ?>
@@ -130,6 +189,17 @@
                                             <h3 class="box-product__title"><a href="<?php echo getFullHost()."/project/project_detail/".$data['project_list'][$i]->id?>" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name ?></a></h3>
                                             <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce ?></p>
                                         </div>
+=======
+                    </div>
+                    <div class="col-4">
+                        <div class="box-product__list">
+                            <?php for ($i = 3; $i < 6; $i++): ?>
+                                <div class="box-product box-product--hover">
+                                    <div class="box-product__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-projects/') . $data['project_list'][$i]->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                    <div class="box-product__content">
+                                        <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $data['project_list'][$i]->name ?></a></h3>
+                                        <p class="box-product__description"><?php echo $data['project_list'][$i]->introduce ?></p>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                     </div>
                                 <?php endfor; ?>
                             </div>

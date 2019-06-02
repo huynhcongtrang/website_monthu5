@@ -103,11 +103,14 @@ class User extends My_controller {
                 $md5_hash = md5(rand(0, 999));
                 $security_code = substr($md5_hash, 15, 6);
                 mail($email, "Send Code", $security_code);
+<<<<<<< HEAD
                 // set timer sendcode
                 $newtimestamp = (new DateTime());
                 date_add($newtimestamp, date_interval_create_from_date_string('1 minutes'));
                 $_SESSION['time_sendcode'] = $newtimestamp->format('Y-m-d H:i:s');
                 
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                 $_SESSION['email_forgot'] = $email;
                 $_SESSION['code'] = $security_code;
                 $data['status'] = 'ok';
@@ -115,6 +118,7 @@ class User extends My_controller {
                 $data['status'] = 'err';
             }
         } else {
+<<<<<<< HEAD
             if (!isset($_SESSION['email_forgot']) && !isset($_SESSION['code']) && !isset($_SESSION['time_sendcode'])) {
                 header('Location: http://localhost/websitesale/home/index');
             }
@@ -122,12 +126,18 @@ class User extends My_controller {
                 header('Location: http://localhost/websitesale/home/index');
             }
             
+=======
+            if (!isset($_SESSION['email_forgot']) && !isset($_SESSION['code'])) {
+                header('Location: http://localhost/websitesale/home/index');
+            }
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
             $this->data['path'] = view_site('/site/user/sendcode');
             render1('site/layout.php', $this->data);
         }
         echo json_encode($data);
     }
 
+<<<<<<< HEAD
     function GetTimeSendCode() {
         $data = array();
         if (isset($_SESSION['time_sendcode'])) {
@@ -139,11 +149,16 @@ class User extends My_controller {
         echo json_encode($data);
     }
 
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
     function Cancel() {
         unset($_SESSION['status_confirm']);
         unset($_SESSION['email_forgot']);
         unset($_SESSION['code']);
+<<<<<<< HEAD
         unset($_SESSION['time_sendcode']);
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
         header('Location: http://localhost/websitesale/home/index');
     }
 
@@ -168,8 +183,11 @@ class User extends My_controller {
         if (!isset($_SESSION['status_confirm'])) {
             header('Location: http://localhost/websitesale/home/index');
         }
+<<<<<<< HEAD
         // xoa di bien time;
         unset($_SESSION['time_sendcode']);
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
         $this->data['path'] = view_site('/site/user/change-password');
         render1('site/layout.php', $this->data);
     }
@@ -197,7 +215,10 @@ class User extends My_controller {
             $data['status'] = 'err';
         echo json_encode($data);
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
 
 }
 
@@ -219,8 +240,11 @@ if (get_rgetment(2) == 'user') {
         $user->RecoverPassword();
     } else if (get_rgetment(3) == 'changepassword') {
         $user->ChangePassword();
+<<<<<<< HEAD
     }else if(get_rgetment(3) == 'get_time_sendcode'){
         $user->GetTimeSendCode();
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
     }
 }
 ?>

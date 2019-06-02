@@ -2,13 +2,20 @@
 
 include 'application\core\My_controller.php';
 include 'application\models\Comment_product_model.php';
+<<<<<<< HEAD
 include 'application\models\Project_model.php';
+=======
+include 'application\models\Service_model.php';
+include 'application\models\Project_model.php';
+
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
 
 //SELECT * FROM `product` ORDER by view LIMIT 9
 class Home extends My_controller {
 
     function __construct() {
         parent::__construct();
+        
     }
 
     function index() {
@@ -47,7 +54,7 @@ class Home extends My_controller {
         $this->data['project_list'] = $project_list;
 
 
-
+        
 
         $this->data['path'] = view_site('/site/home/index');
         render1('site/layout.php', $this->data);

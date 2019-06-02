@@ -68,6 +68,7 @@ function format_content($data) {
         
     }
 }
+<<<<<<< HEAD
 function format_content_service($data) {
     $array_content = explode("enter", $data);
     foreach ($array_content as $con){
@@ -76,3 +77,5 @@ function format_content_service($data) {
         
     }
 }
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12

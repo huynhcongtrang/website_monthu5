@@ -6,6 +6,7 @@
             var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             return regex.test(email);
         }
+<<<<<<< HEAD
         function validateVietnameseName(name) {
         var firstLetter = "[A-EGHIK-VXYÂĐỔÔÚỨ]".normalize("NFC"),
                 otherLetters = "[a-eghik-vxyàáâãèéêìíòóôõùúýỳỹỷỵựửữừứưụủũợởỡờớơộổỗồốọỏịỉĩệểễềếẹẻẽặẳẵằắăậẩẫầấạảđ₫]".normalize("NFC"),
@@ -20,6 +21,12 @@
             return false
         }
     }
+=======
+        function isName(name) {
+            var regex = /^[a-zA-Z]+$/;
+            return regex.test(name);
+        }
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
         function isAddress(address) {
             var regex = /^[0-9\-\(\)\s]+$/;
             return regex.test(address);
@@ -54,11 +61,15 @@
             if (name == "") {
                 $("#error-display-name").text("Vui lòng nhập họ tên !");
                 check = false;
+<<<<<<< HEAD
             }else if(validateVietnameseName(name)){
                 $("#error-display-name").text("Kiểm tra lại họ tên !");
                 check = false;
             }
             else {
+=======
+            } else {
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                 $("#error-display-name").text("");
             }
             if (phone == "") {
@@ -80,7 +91,11 @@
                 $("#error-display-email").text("Vui lòng nhập địa chỉ email !");
                 check = false;
             } else if (!isEmail(email)) {
+<<<<<<< HEAD
                 $("#error-display-email").text("Email không đúng định dạng !");
+=======
+                $("#error-display-email").text("Email không hợp lệ !");
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                 check = false;
             } else {
                 $("#error-display-email").text("");

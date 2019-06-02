@@ -3466,9 +3466,12 @@ section+section {
 }
 .error-display-change{
     margin-left: 50px;
+<<<<<<< HEAD
 }
 .error_display_contact{
     
     color : red;
     padding-left: 1em;
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
 }

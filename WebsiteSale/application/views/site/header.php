@@ -19,10 +19,17 @@
                 <div class="header__hotline">
                     <ul class="hotline__list">
                         <li class="hotline__item"><i class="hotline__item-icon flaticon-call-answer"></i>
+<<<<<<< HEAD
                             <div class="hotline__item-info">Hotline: <a href="tel: <?php echo $data['info_company']->phone ?>" class="hotline__item-link"><?php echo displayPhone($data['info_company']->phone) ?></a></div>
                         </li>
                         <li class="hotline__item"><i class="hotline__item-icon flaticon-envelope"></i>
                             <div class="hotline__item-info">Email: <a href="mailto: <?php echo $data['info_company']->email ?>" class="hotline__item-link"><?php echo $data['info_company']->email ?></a></div>
+=======
+                            <div class="hotline__item-info">Hotline: <a href="tel: <?php echo $data['info_company']->phone?>" class="hotline__item-link"><?php echo displayPhone($data['info_company']->phone)?></a></div>
+                        </li>
+                        <li class="hotline__item"><i class="hotline__item-icon flaticon-envelope"></i>
+                            <div class="hotline__item-info">Email: <a href="mailto: <?php echo $data['info_company']->email?>" class="hotline__item-link"><?php echo $data['info_company']->email?></a></div>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                         </li>
                     </ul>
                 </div>
@@ -76,7 +83,11 @@
                                     <h4>Khôi phục mật khẩu</h4><button type="button" class="mfp-close">x</button>
                                     <div class="form-group"><input type="email" id="email-password" name="email-password" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
                                     <p class="error-display" id="error-display-forgot"></p>
+<<<<<<< HEAD
                                     <div class="wating_moment"><?php include 'wating.php'; ?></div>
+=======
+                                    <div class="wating_moment"><?php include 'wating.php';?></div>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                     <button type="submit" class="button-submit " id="submit-forgot">Yêu cầu mật khẩu mới</button>
                                 </div>
                             </li>
@@ -164,6 +175,7 @@
         <nav class="menu">
             <div class="menu-default">
                 <div class="menu-default__title"><i class="menu-default__icon flaticon-menu-button-of-three-horizontal-lines"></i><span class="menu-default__span">Danh mục sản phẩm</span></div>
+<<<<<<< HEAD
                 <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path'] != 'application/views/site/user/change-password.php'): ?>
                     <ul class="menu-default__list">
                         <?php foreach ($data['catalog'] as $cata): ?>
@@ -176,17 +188,39 @@
                                                     <ul class="menu-default__sub-menu">
                                                         <?php foreach ($row->subs2 as $row1) : ?>
                                                             <li class="menu-default__item"><a href="<?php echo getFullHost() . "/product/product-follow-catalog/" . $row1->id ?>" class="menu-default__link"><?php echo $row1->name ?></a></li>
+=======
+                <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path']  != 'application/views/site/user/change-password.php'): ?>
+                    <ul class="menu-default__list">
+                        <?php foreach ($data['catalog'] as $cata): ?>
+                            <?php if (!empty($cata->subs)): ?>
+                                <li class="menu-default__item"><a href="#" class="menu-default__link menu-default__link--icon"><?php echo $cata->name ?></a>
+                                    <ul class="menu-default__sub-menu">
+                                        <?php foreach ($cata->subs as $row): ?>
+                                            <?php if (!empty($row->subs2)): ?>
+                                                <li class="menu-default__item"><a href="#" class="menu-default__link menu-default__link--icon"><?php echo $row->name ?></a>
+                                                    <ul class="menu-default__sub-menu">
+                                                        <?php foreach ($row->subs2 as $row1) : ?>
+                                                            <li class="menu-default__item"><a href="#" class="menu-default__link"><?php echo $row1->name ?></a></li>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                                         <?php endforeach; ?>
                                                     </ul>
                                                 </li>
                                             <?php else : ?>
+<<<<<<< HEAD
                                                 <li class="menu-default__item"><a href="<?php echo getFullHost() . "/product/product-follow-catalog/" . $row->id ?>" class="menu-default__link"><?php echo $row->name ?></a></li>
+=======
+                                                <li class="menu-default__item"><a href="#" class="menu-default__link"><?php echo $row->name ?></a></li>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
                             <?php else: ?>
+<<<<<<< HEAD
                                 <li class="menu-default__item"><a href="<?php echo getFullHost() . "/product/product-follow-catalog/" . $cata->id ?>" class="menu-default__link"><?php echo $cata->name ?></a>
+=======
+                                <li class="menu-default__item"><a href="#" class="menu-default__link"><?php echo $cata->name ?></a>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                 <?php endif; ?>
                             <?php endforeach; ?>
                     </ul>
@@ -195,18 +229,32 @@
             <div class="menu-main">
                 <nav class="navigation">
                     <ul class="navigation__list">
+<<<<<<< HEAD
                         <li class="navigation__item navigation__active"><a href="<?php echo getFullHost() . '/home/index'; ?>" class="navigation__link">Trang chủ</a></li>
                         <li class="navigation__item"><a href="#" class="navigation__link">Giới thiệu</a></li>
                         <li class="navigation__item"><a href="<?php echo getFullHost() . '/product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
                         <li class="navigation__item"><a href="<?php echo getFullHost() . '/service/service_list'; ?>" class="navigation__link">Dịch vụ</a></li>
                         <li class="navigation__item"><a href="<?php echo getFullHost() . '/project/project_list'; ?>" class="navigation__link">Dự án tiêu biểu</a></li>
                         <li class="navigation__item"><a href="<?php echo getFullHost() . '/contact/index'; ?>" class="navigation__link">Liên hệ</a></li>
+=======
+
+                        <li class="navigation__item navigation__active"><a href="<?php echo getFullHost() . '/home/index'; ?>" class="navigation__link">Trang chủ</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link">Giới thiệu</a></li>
+                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link">Dịch vụ</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link">Dự án tiêu biểu</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link">Liên hệ</a></li>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                     </ul>
                     <div class="navigation__block-form">
                         <form action="<?php echo getFullHost() . "/home/search/"; ?>" method="get"   class="navigation__form"><input type="text" id="search_pro" name="search_product" value="<?php echo isset($_GET['search_product']) ? $_GET['search_product'] : ''; ?>" placeholder="Search..." class="navigation__input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"/><button type="submit" class="navigation__submit"><i class="navigation__icon flaticon-search"></i></button></form>
                     </div>
                 </nav>
+<<<<<<< HEAD
                 <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path'] != 'application/views/site/user/change-password.php'): ?>
+=======
+                <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path']  != 'application/views/site/user/change-password.php'): ?>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                     <div data-slidesToShow="1" data-slidesToScroll="1" data-dots="1" data-arrows="1" data-autoplay="1" class="comp-slider-header slider__list slider-general__list comp-slider">
                         <?php foreach ($data['banner'] as $ban): ?>
                             <figure class="slider-item"><a href="#" class="slider-item__link"><img src="<?php echo public_url('/assets/images/slider/') . $ban->image ?>" alt="vnbuilding slider" class="slider-item__image" /></a>
