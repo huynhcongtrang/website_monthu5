@@ -43,21 +43,18 @@ Class My_model extends Database{
 //        return [];
 //    }
 //
-//    public function insert() {
-//        $sql = "insert into " . $this->table  . $this->queryParams["params"] . " values" . $this->queryParams["values"];                     
-//        $result = $this->query($sql);
-//        if ($result) {
-//            return self::$connectionIntance->lastInsertId();
-//        } else {
-//            return false;
-//        }
-//    }
+    public function insert() {
+        $sql = "insert into " . $this->table  . $this->queryParams["params"] . " values" . $this->queryParams["values"];                     
+        $this->setQuery($sql);
+        return $this;
+    }
 //
-//    public function update() {
-//        $sql = "update " . $this->table  . " set " . $this->queryParams["value"] . " " . $this->buildCondition($this->queryParams["where"]);
-//        // var_dump($sql) ; die() ; 
-//        return $this->query($sql);
-//    }
+    public function update() {
+        $sql = "update " . $this->table  . " set " . $this->queryParams["values"] . " " . $this->buildCondition($this->queryParams["where"]);
+        // var_dump($sql) ; die() ; 
+        $this->setQuery($sql);
+        return $this;
+    }
 //
 //    public function delete() {
 //        $sql = "delete from " . $this->table  . $this->buildCondition($this->queryParams["where"]) . " " . $this->queryParams["other"];

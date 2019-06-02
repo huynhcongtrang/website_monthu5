@@ -1,9 +1,8 @@
 <?php
 
-require 'application\core\My_controller.php';
-require 'application\models\Comment_product_model.php';
-require 'application\models\Service_model.php';
-require 'application\models\Project_model.php';
+include 'application\core\My_controller.php';
+include 'application\models\Comment_product_model.php';
+include 'application\models\Project_model.php';
 
 //SELECT * FROM `product` ORDER by view LIMIT 9
 class Home extends My_controller {
@@ -13,6 +12,7 @@ class Home extends My_controller {
     }
 
     function index() {
+        
         // laay catalog
         //product
         $product_model = new Product_model();
@@ -55,11 +55,11 @@ class Home extends My_controller {
 
     function Search() {
         $this->data['key'] = $_GET['search_product'];
-         //product
+        //product
         $product_model = new Product_model();
         $product_list = $product_model->buldQueryParams([
                     "select" => "*",
-                    "where" => "name like N'%".$_GET['search_product']."%'"
+                    "where" => "name like N'%" . $_GET['search_product'] . "%'"
                 ])->select()->loadAllRows();
 
         $comment_product = new Comment_product_model();
@@ -71,19 +71,20 @@ class Home extends My_controller {
             $product->totalcommnet = $subs[0]->totalcomment;
         }
         $this->data['product_list'] = $product_list;
-        
-        
+
+
         $this->data['path'] = view_site('/site/home/search');
         render1('site/layout.php', $this->data);
     }
 
 }
+
 $home = new Home();
-if (get_rgetment(2) == 'Home') {
+if (get_rgetment(2) == 'home') {
     if (get_rgetment(3) == 'index') {
         $home->index();
     }
-    if(get_rgetment(3) == 'search'){
+    if (get_rgetment(3) == 'search') {
         $home->Search();
     }
 }

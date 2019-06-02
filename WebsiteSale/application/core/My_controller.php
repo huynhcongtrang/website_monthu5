@@ -1,12 +1,23 @@
 <?php
-require 'application\models\Product_Model.php';
-require 'application\models\Catalog_Model.php';
-require 'application\models\Advisory_Model.php';
-require 'application\models\Banner_Model.php';
+include 'application\models\Product_model.php';
+include 'application\models\Catalog_Model.php';
+include 'application\models\Advisory_Model.php';
+include 'application\models\Banner_Model.php';
+include 'application\models\Info_company_Model.php';
+include  'application\models\Service_model.php';
+include 'application\models\service_type_Model.php';
+
+session_start();
 class My_controller {
     public $data = array();
     public function __construct() {
-        
+        //info company
+        $info_company = new Info_company_model();
+        $info_company_de = $info_company->buldQueryParams([
+                    "select" => "*",
+                    "where" => "id = 1"
+                ])->select()->loadRow();
+        $this->data['info_company'] = $info_company_de;
         //catalog
         $catalog_model = new Catalog_Model();
         $catalog_list = $catalog_model->buldQueryParams([
@@ -42,7 +53,12 @@ class My_controller {
                 ])->select()->loadAllRows();
 //        pre($advisory_list);
          $this->data['advisory'] = $advisory_list;
-         
+         // service_type
+         $service_type_model = new Service_type_model();
+         $service_type_list = $service_type_model->buldQueryParams([
+                    "select" => "*",
+                ])->select()->loadAllRows();
+         $this->data['service_type_list'] = $service_type_list;
          
          // banner
          
@@ -56,7 +72,7 @@ class My_controller {
          $this->data['banner'] = $banner_list;
          //produc_search
          $product_model = new Product_Model();
-          $product_list_search = $product_model->buldQueryParams([
+         $product_list_search = $product_model->buldQueryParams([
                     "select" => "id,name as 'label', name as 'value'",
                     "other" => "order by name desc"
                 ])->select()->loadAllRows();

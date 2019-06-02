@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row">
         <div class="col-3">
@@ -10,10 +9,10 @@
                             <?php if (!empty($data['product_list'])): ?>
                                 <?php foreach ($data['product_list'] as $pro): ?>
                                     <div class="box-product box-product--hover wow fadeInUp">
-                                        <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-products/') . $pro->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                        <div class="box-product__image most-view__image"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id ?>" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-products/') . $pro->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
                                         <div class="box-product__content">
                                             <h3 class="box-product__title"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id ?>" class="box-product__link box-product__link--title"><?php echo $pro->name ?></a></h3>
-                                            <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc"><?php echo $pro->view ?> Lượt xem</a></div>
+                                            <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id ?>" class="box-product__link box-product__link--vc"><?php echo $pro->view ?> Lượt xem</a></div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -28,28 +27,22 @@
         </div>
         <div class="col-9">
             <div class="main-content">
-                <section class="box-wrapper section-projects-list">
+                <section class="box-wrapper section-posts-list">
                     <div class="box-wrapper__head">
                         <div class="box-wrapper__block-title">
-                            <h3 class="box-wrapper__title">Dự án của chúng tôi</h3>
-                        </div>
-                        <div class="box-wrapper__nav-bar">
-                            <ul class="box-wrapper__list">
-                                <li class="box-wrapper__item"><a href="#" class="box-wrapper__link">Trang chủ</a></li>
-                                <li class="box-wrapper__item">Dự án của chúng tôi</li>
-                            </ul>
+                            <h3 class="box-wrapper__title">Dịch vụ của chúng tôi</h3>
                         </div>
                     </div>
-                    <?php if (!empty($data['project_list'])): ?>
-                        <div class="box-wrapper__content">
+                    <?php if (!empty($data['service_list'])): ?>
+                        <div class="box_wrapper__content">
                             <div class="row">
-                                <?php foreach ($data['project_list'] as $project): ?>
+                                <?php foreach ($data['service_list'] as $service): ?>
                                     <div class="col-4">
-                                        <div class="box-product box-product--project box-product--custom-title box-product--hover">
-                                            <div class="box-product__image"><a href="<?php echo getFullHost() . '/project/project_detail/' . $project->id ?>" class="box-product__link--image"><img src="<?php echo public_url("/assets/images/section-projects/") . $project->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                        <div class="box-product box-product--services box-product--custom-title box-product--hover">
+                                            <div class="box-product__image"><a href="<?php echo getFullHost() . '/service/service_detail/' . $service->id ?>" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-services/') . $service->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
                                             <div class="box-product__content">
-                                                <h3 class="box-product__title"><a href="<?php echo getFullHost() . '/project/project_detail/' . $project->id ?>" class="box-product__link box-product__link--title"><?php echo $project->name ?></a></h3>
-                                                <p class="box-product__description"><?php echo $project->introduce ?></p>
+                                                <h3 class="box-product__title"><a href="<?php echo getFullHost() . '/service/service_detail/' . $service->id ?>" class="box-product__link box-product__link--title"><?php echo $service->name ?></a></h3>
+                                                <p class="box-product__description"><?php echo $service->introduce ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +50,7 @@
                             </div>
                         </div>
                     <?php else: ?>
-                        <h2>Không có dự án nào ....</h2>
+                        <h2>Dịch vụ trống</h2>
                     <?php endif; ?>
                 </section>
             </div>

@@ -30,9 +30,9 @@
                     <h3 class="box-widget__title">Địa chỉ liên hệ</h3>
                     <div class="box-widget__content">
                         <ul class="box-widget__list box-widget__list--address">
-                            <li class="box-widget__item"><i class="box-widget__icon flaticon-factory"></i><span>Địa chỉ: SN27, Ngõ 65, Phố Vân Hồ III, P. Lê Đại Hành, Q. Hai Bà Trưng, TP. Hà Nội </span></li>
-                            <li class="box-widget__item"><i class="box-widget__icon flaticon-call-answer"></i><span>Điện thoại: 043 5590 389 Fax: 043 5590 389</span></li>
-                            <li class="box-widget__item"><i class="box-widget__icon flaticon-envelope"></i><span>Email: vnbuildingthanglong@gmail.com</span></li>
+                            <li class="box-widget__item"><i class="box-widget__icon flaticon-factory"></i><span>Địa chỉ: <?php echo $data['info_company']->address?> </span></li>
+                            <li class="box-widget__item"><i class="box-widget__icon flaticon-call-answer"></i><span>Điện thoại: <?php echo displayPhone($data['info_company']->phone)?></span></li>
+                            <li class="box-widget__item"><i class="box-widget__icon flaticon-envelope"></i><span>Email: <?php echo $data['info_company']->email?></span></li>
                         </ul>
                     </div>
                 </div>
@@ -42,11 +42,9 @@
                     <h3 class="box-widget__title">Danh mục sản phẩm</h3>
                     <div class="box-widget__content">
                         <ul class="box-widget__list box-widget__list--items">
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Rọ đá</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Giấy dầu xây dựng</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Lưới thép</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Vật tư giao thông</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Sản phẩm khác</a></li>
+                            <?php foreach ($data['catalog'] as $cata): ?>
+                            <li class="box-widget__item"><a href="#" class="box-widget__link"><?php echo $cata->name?></a></li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                 </div>
@@ -56,11 +54,9 @@
                     <h3 class="box-widget__title">Dịch vụ</h3>
                     <div class="box-widget__content">
                         <ul class="box-widget__list box-widget__list--items">
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Thi công hàn màng chống thấm</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Thi công cọc cát</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Thi công nhà dân dụng</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Thi công chống thấm mái tôn</a></li>
-                            <li class="box-widget__item"><a href="#" class="box-widget__link">Dịch vụ khác</a></li>
+                            <?php foreach ($data['service_type_list'] as $type_service):?>
+                            <li class="box-widget__item"><a href="#" class="box-widget__link"><?php echo $type_service->name ?></a></li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                 </div>

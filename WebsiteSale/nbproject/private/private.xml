@@ -3,24 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Service_model.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Advisory_model.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Comment_product_model.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/core/My_model.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Banner_model.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/head.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/public/assets/js/sendcode.js</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/user/sendcode.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/controllers/Service.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/product/product_follow_catalog.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/contact/index.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/post/posts_list.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/helper/SendMail.php</file>
             <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/home/index.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Product_model.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/controllers/Product.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/core/Database.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/models/Project_model.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/header.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/foot.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/helper/common_helper.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/product/product_detail.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/home/search.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/post/post_detail.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/project/project_list.php</file>
             <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/layout.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/footer.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/core/My_controller.php</file>
-            <file>file:/C:/xampp/htdocs/WebsiteSale/application/controllers/Home.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/user/change-password.php</file>
+            <file>file:/C:/xampp/htdocs/WebsiteSale/application/views/site/product/product_list.php</file>
         </group>
     </open-files>
 </project-private>

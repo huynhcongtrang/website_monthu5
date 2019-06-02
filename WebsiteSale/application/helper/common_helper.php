@@ -59,3 +59,20 @@ function get_rgetment($local) {
     $uriArray = explode('/', $uri);
     return $page_url = $uriArray[$local];
 }
+
+function format_content($data) {
+    $array_content = explode("-", $data);
+    foreach ($array_content as $con){
+        echo '<br>';
+        echo "<li>- ".$con."</li>";
+        
+    }
+}
+function format_content_service($data) {
+    $array_content = explode("enter", $data);
+    foreach ($array_content as $con){
+        echo '<br>';
+        echo "<li>- ".$con."</li>";
+        
+    }
+}
