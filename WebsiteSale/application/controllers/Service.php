@@ -23,6 +23,8 @@ class Service extends My_controller {
                     "select" => "id,name,introduce,image_link",
                 ])->select()->loadAllRows();
         $this->data['service_list'] = $service_list;
+        
+        $this->data['active_navigation'] = "service";
         $this->data['path'] = view_site('/site/post/posts_list');
         render1('site/layout.php', $this->data);
     }
@@ -57,6 +59,7 @@ class Service extends My_controller {
                 ])->select()->loadAllRows();
         $this->data['service_relate'] = $service_relate;
         
+        $this->data['active_navigation'] = "service";
         $this->data['path'] = view_site('/site/post/post_detail');
         render1('site/layout.php', $this->data);
     }

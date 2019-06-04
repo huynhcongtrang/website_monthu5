@@ -40,12 +40,12 @@ function displayPhone($phone) {
 }
 
 function get_date($time, $full_time = true) {
-    $format = '%d-%m-%Y';
+    $date = new DateTime($time);
     if ($full_time) {
-        $format = $format . '   %H:%i:%s';
+        return $date->format('d-m-Y H:i:s');
+    } else {
+        return $date->format("d-m-Y");
     }
-    $date = mdate($format, $time);
-    return $date;
 }
 
 function get_month($time) {
@@ -62,20 +62,16 @@ function get_rgetment($local) {
 
 function format_content($data) {
     $array_content = explode("-", $data);
-    foreach ($array_content as $con){
+    foreach ($array_content as $con) {
         echo '<br>';
-        echo "<li>- ".$con."</li>";
-        
+        echo "<li>- " . $con . "</li>";
     }
 }
-<<<<<<< HEAD
+
 function format_content_service($data) {
     $array_content = explode("enter", $data);
-    foreach ($array_content as $con){
+    foreach ($array_content as $con) {
         echo '<br>';
-        echo "<li>- ".$con."</li>";
-        
+        echo "<li>- " . $con . "</li>";
     }
 }
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12

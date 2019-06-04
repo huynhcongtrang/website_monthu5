@@ -2,6 +2,7 @@
 
 include 'application\core\My_controller.php';
 include 'application\models\User_model.php';
+include 'application\models\Transaction_model.php';
 
 class User extends My_controller {
 
@@ -103,14 +104,11 @@ class User extends My_controller {
                 $md5_hash = md5(rand(0, 999));
                 $security_code = substr($md5_hash, 15, 6);
                 mail($email, "Send Code", $security_code);
-<<<<<<< HEAD
                 // set timer sendcode
                 $newtimestamp = (new DateTime());
                 date_add($newtimestamp, date_interval_create_from_date_string('1 minutes'));
                 $_SESSION['time_sendcode'] = $newtimestamp->format('Y-m-d H:i:s');
-                
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
+
                 $_SESSION['email_forgot'] = $email;
                 $_SESSION['code'] = $security_code;
                 $data['status'] = 'ok';
@@ -118,26 +116,20 @@ class User extends My_controller {
                 $data['status'] = 'err';
             }
         } else {
-<<<<<<< HEAD
             if (!isset($_SESSION['email_forgot']) && !isset($_SESSION['code']) && !isset($_SESSION['time_sendcode'])) {
                 header('Location: http://localhost/websitesale/home/index');
             }
-            if(strtotime($_SESSION['time_sendcode']) < strtotime((new DateTime())->format('Y-m-d H:i:s'))){
+            if (strtotime($_SESSION['time_sendcode']) < strtotime((new DateTime())->format('Y-m-d H:i:s'))) {
                 header('Location: http://localhost/websitesale/home/index');
             }
-            
-=======
-            if (!isset($_SESSION['email_forgot']) && !isset($_SESSION['code'])) {
-                header('Location: http://localhost/websitesale/home/index');
-            }
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
+
+            $this->data['active_navigation'] = "home";
             $this->data['path'] = view_site('/site/user/sendcode');
             render1('site/layout.php', $this->data);
         }
         echo json_encode($data);
     }
 
-<<<<<<< HEAD
     function GetTimeSendCode() {
         $data = array();
         if (isset($_SESSION['time_sendcode'])) {
@@ -149,16 +141,11 @@ class User extends My_controller {
         echo json_encode($data);
     }
 
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
     function Cancel() {
         unset($_SESSION['status_confirm']);
         unset($_SESSION['email_forgot']);
         unset($_SESSION['code']);
-<<<<<<< HEAD
         unset($_SESSION['time_sendcode']);
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
         header('Location: http://localhost/websitesale/home/index');
     }
 
@@ -183,11 +170,9 @@ class User extends My_controller {
         if (!isset($_SESSION['status_confirm'])) {
             header('Location: http://localhost/websitesale/home/index');
         }
-<<<<<<< HEAD
         // xoa di bien time;
         unset($_SESSION['time_sendcode']);
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
+        $this->data['active_navigation'] = "home";
         $this->data['path'] = view_site('/site/user/change-password');
         render1('site/layout.php', $this->data);
     }
@@ -215,10 +200,68 @@ class User extends My_controller {
             $data['status'] = 'err';
         echo json_encode($data);
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
+
+    function Account() {
+        if (!isset($_SESSION['id_user'])) {
+            header('Location: http://localhost/websitesale/home/index');
+        }
+
+        $user_model = new User_model();
+        $user_info = $user_model->buldQueryParams([
+                    "select" => "name,phone,address",
+                    "where" => "id = " . $_SESSION['id_user']
+                ])->select()->loadRow();
+        $this->data['user'] = $user_info;
+        
+        
+        //load transaction
+        // payment 1 : thanh toan tai nha 2: thanh toan chuyen khoan
+        // status_payment 1 : chuaw thanh toan , 2 : da thanh toan , 
+        // status_ship : 1 : dang van chuyen , 2 : da va chuyen
+        $transaction_model = new Transaction_model();
+        $transaction_list = $transaction_model->buldQueryParams([
+                    "select" => "id,created , address , amount , payment, status_payment , status_ship",
+                    "where" => "id_user = " . $_SESSION['id_user']
+                ])->select()->loadAllRows();
+        $this->data['transaction_list'] = $transaction_list;
+        $this->data['path'] = view_site('/site/user/account');
+        render1('site/layout.php', $this->data);
+    }
+
+    function CheckExistPhone($phone) {
+        $user_model = new User_model();
+        $user_list = $user_model->buldQueryParams([
+                    "select" => "*",
+                    "where" => " id <> ".$_SESSION['id_user']." and phone = '".$phone."'"
+                ])->select()->loadRow();
+        if (!empty($user_list)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function Update() {
+
+        $data = array();
+        if (!isset($_SESSION['id_user'])) {
+            $data['status'] = 'error';
+            $data['message'] = 'not_login';
+        } else if (!empty($_POST['name']) && !empty($_POST['phone']) && !empty($_POST['address'])) {
+            if ($this->CheckExistPhone($_POST['phone'])) {
+                $data['status'] = 'error';
+                $data['message'] = 'exit_phone';
+            } else {
+                $user_model = new User_model();
+                $user_list = $user_model->buldQueryParams([
+                            "values" => " name = '" . $_POST['name'] . "' , phone = '" . $_POST['phone'] . "', address = '" . $_POST['address'] . "'",
+                            "where" => " id = " . $_SESSION['id_user']
+                        ])->update()->execute();
+                $data['status'] = 'ok';
+            }
+        }
+        echo json_encode($data);
+    }
 
 }
 
@@ -240,11 +283,15 @@ if (get_rgetment(2) == 'user') {
         $user->RecoverPassword();
     } else if (get_rgetment(3) == 'changepassword') {
         $user->ChangePassword();
-<<<<<<< HEAD
-    }else if(get_rgetment(3) == 'get_time_sendcode'){
+    } else if (get_rgetment(3) == 'get_time_sendcode') {
         $user->GetTimeSendCode();
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
+    } else if (get_rgetment(3) == 'account') {
+        $user->Account();
+    } else if (get_rgetment(3) == 'update') {
+        $user->Update();
+    }
+     else if (get_rgetment(3) == 'check') {
+        $user->CheckExistPhone('0326646934');
     }
 }
 ?>

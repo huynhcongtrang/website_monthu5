@@ -1,8 +1,3 @@
-<script src="<?php echo public_url() ?>/assets/js/jquery-ui.js"></script>
-<link type="text/css" href="<?php echo public_url() ?>/assets/js/jquery-ui.css" rel="stylesheet">
-<script src="<?php echo public_url() ?>/assets/js/Login.js"></script>
-<script src="<?php echo public_url() ?>/assets/js/Register.js"></script>
-<script src="<?php echo public_url() ?>/assets/js/GetPassword.js"></script>
 <script>
 
     $(function () {
@@ -19,17 +14,10 @@
                 <div class="header__hotline">
                     <ul class="hotline__list">
                         <li class="hotline__item"><i class="hotline__item-icon flaticon-call-answer"></i>
-<<<<<<< HEAD
                             <div class="hotline__item-info">Hotline: <a href="tel: <?php echo $data['info_company']->phone ?>" class="hotline__item-link"><?php echo displayPhone($data['info_company']->phone) ?></a></div>
                         </li>
                         <li class="hotline__item"><i class="hotline__item-icon flaticon-envelope"></i>
                             <div class="hotline__item-info">Email: <a href="mailto: <?php echo $data['info_company']->email ?>" class="hotline__item-link"><?php echo $data['info_company']->email ?></a></div>
-=======
-                            <div class="hotline__item-info">Hotline: <a href="tel: <?php echo $data['info_company']->phone?>" class="hotline__item-link"><?php echo displayPhone($data['info_company']->phone)?></a></div>
-                        </li>
-                        <li class="hotline__item"><i class="hotline__item-icon flaticon-envelope"></i>
-                            <div class="hotline__item-info">Email: <a href="mailto: <?php echo $data['info_company']->email?>" class="hotline__item-link"><?php echo $data['info_company']->email?></a></div>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                         </li>
                     </ul>
                 </div>
@@ -61,17 +49,41 @@
                                 </div>
                                 <div id="register-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-edit"></i>
                                     <h4>Đăng ký</h4><button type="button" class="mfp-close">x</button>
-                                    <div class="form-group"><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
+                                    <div class="form-group"><label>Họ và tên (*):</label><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-name"></p>
-                                    <div class="form-group"><input type="text" id="phone-register" name="phone-register" placeholder="Nhập vào số điện thoại của bạn" required="required" /></div>
+                                    <div class="form-group"><label>Số điện thoại (*):</label><input type="text" id="phone-register" name="phone-register" placeholder="Nhập vào số điện thoại của bạn" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-phone"></p>
-                                    <div class="form-group"><input type="text" id="address-register" name="address-register" placeholder="Nhập vào địa chỉ của bạn" required="required" /></div>
+                                    <!--<div class="form-group"><label>Địa chỉ (*):</label><input type="text" id="address-register" name="address-register" placeholder="Nhập vào địa chỉ của bạn" required="required" /></div>-->
+
+                                    <div class="form-group">
+                                        <label>Địa chỉ (*):</label>
+                                        <div class="content-address">
+                                            
+                                            <select class="selectpicker form-control select-control" id="province-select-address" data-container="body" data-live-search="true" title="Chọn tỉnh, thành phố..." data-hide-disabled="true">
+                                                <option value="Tp. Hồ Chí Minh">Hồ chí minh</option>
+                                            </select>
+                                            
+                                            <select class="selectpicker form-control select-control" id="district-select-address" data-container="body" data-live-search="true" title="Chọn quận, huyện ..." data-hide-disabled="true">
+                                                <option value="Quận 1">Qận 1</option>
+                                            </select>
+                                            
+                                            <select class="selectpicker form-control select-control" id="ward-select-address" data-container="body" data-live-search="true" title="Chọn phường, thị xã ...." data-hide-disabled="true">
+                                                <option value="Phường Tân Chánh Hiệp">Phường Tân Chánh Hiệp</option>
+                                            </select>
+                                            
+                                            <input type="text" id="street-register" name="address-register" placeholder="Nhập vào số nhà, đường.." required="required" />
+
+                                        </div>
+                                    </div>
                                     <p class="error-display-detail" id="error-display-address"></p>
-                                    <div class="form-group"><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
+
+                                    <div class="form-group"><label>Email (*):</label><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-email"></p>
-                                    <div class="form-group"><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
+                                    <div class="form-group"><label>Mật khẩu (*):</label><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-password"></p>
-                                    <div class="form-group"><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div>
+
+                                    <p class="error-display-detail" id=""></p>
+                                    <div class="form-group"><label>Nhập lại mật khẩu (*):</label><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-repassword"></p>
                                     <p class="error-display" id="error-display-register"></p>
                                     <button type="submit" class="button-submit" id="submit-register">Đăng ký</button>
@@ -83,11 +95,7 @@
                                     <h4>Khôi phục mật khẩu</h4><button type="button" class="mfp-close">x</button>
                                     <div class="form-group"><input type="email" id="email-password" name="email-password" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
                                     <p class="error-display" id="error-display-forgot"></p>
-<<<<<<< HEAD
                                     <div class="wating_moment"><?php include 'wating.php'; ?></div>
-=======
-                                    <div class="wating_moment"><?php include 'wating.php';?></div>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                     <button type="submit" class="button-submit " id="submit-forgot">Yêu cầu mật khẩu mới</button>
                                 </div>
                             </li>
@@ -95,7 +103,7 @@
                             <li class="function__item"><a href="javascript:void(0)" class="function__link" ><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
                                 <div class="function__content function-hover">
                                     <ul class="function-hover__list">
-                                        <li class="function-hover__item"><a href="#" class="link">Tài khoản</a></li>
+                                        <li class="function-hover__item"><a href="<?php echo getFullHost() . '/user/account'; ?>" class="link">Tài khoản</a></li>
                                         <li class="function-hover__item"><a href="<?php echo getFullHost() . '/user/logout'; ?>" class="link">Đăng xuất</a></li>
                                     </ul>
                                 </div>
@@ -175,7 +183,6 @@
         <nav class="menu">
             <div class="menu-default">
                 <div class="menu-default__title"><i class="menu-default__icon flaticon-menu-button-of-three-horizontal-lines"></i><span class="menu-default__span">Danh mục sản phẩm</span></div>
-<<<<<<< HEAD
                 <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path'] != 'application/views/site/user/change-password.php'): ?>
                     <ul class="menu-default__list">
                         <?php foreach ($data['catalog'] as $cata): ?>
@@ -188,39 +195,17 @@
                                                     <ul class="menu-default__sub-menu">
                                                         <?php foreach ($row->subs2 as $row1) : ?>
                                                             <li class="menu-default__item"><a href="<?php echo getFullHost() . "/product/product-follow-catalog/" . $row1->id ?>" class="menu-default__link"><?php echo $row1->name ?></a></li>
-=======
-                <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path']  != 'application/views/site/user/change-password.php'): ?>
-                    <ul class="menu-default__list">
-                        <?php foreach ($data['catalog'] as $cata): ?>
-                            <?php if (!empty($cata->subs)): ?>
-                                <li class="menu-default__item"><a href="#" class="menu-default__link menu-default__link--icon"><?php echo $cata->name ?></a>
-                                    <ul class="menu-default__sub-menu">
-                                        <?php foreach ($cata->subs as $row): ?>
-                                            <?php if (!empty($row->subs2)): ?>
-                                                <li class="menu-default__item"><a href="#" class="menu-default__link menu-default__link--icon"><?php echo $row->name ?></a>
-                                                    <ul class="menu-default__sub-menu">
-                                                        <?php foreach ($row->subs2 as $row1) : ?>
-                                                            <li class="menu-default__item"><a href="#" class="menu-default__link"><?php echo $row1->name ?></a></li>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                                         <?php endforeach; ?>
                                                     </ul>
                                                 </li>
                                             <?php else : ?>
-<<<<<<< HEAD
                                                 <li class="menu-default__item"><a href="<?php echo getFullHost() . "/product/product-follow-catalog/" . $row->id ?>" class="menu-default__link"><?php echo $row->name ?></a></li>
-=======
-                                                <li class="menu-default__item"><a href="#" class="menu-default__link"><?php echo $row->name ?></a></li>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
                             <?php else: ?>
-<<<<<<< HEAD
                                 <li class="menu-default__item"><a href="<?php echo getFullHost() . "/product/product-follow-catalog/" . $cata->id ?>" class="menu-default__link"><?php echo $cata->name ?></a>
-=======
-                                <li class="menu-default__item"><a href="#" class="menu-default__link"><?php echo $cata->name ?></a>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                 <?php endif; ?>
                             <?php endforeach; ?>
                     </ul>
@@ -229,32 +214,18 @@
             <div class="menu-main">
                 <nav class="navigation">
                     <ul class="navigation__list">
-<<<<<<< HEAD
-                        <li class="navigation__item navigation__active"><a href="<?php echo getFullHost() . '/home/index'; ?>" class="navigation__link">Trang chủ</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">Giới thiệu</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/service/service_list'; ?>" class="navigation__link">Dịch vụ</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/project/project_list'; ?>" class="navigation__link">Dự án tiêu biểu</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/contact/index'; ?>" class="navigation__link">Liên hệ</a></li>
-=======
-
-                        <li class="navigation__item navigation__active"><a href="<?php echo getFullHost() . '/home/index'; ?>" class="navigation__link">Trang chủ</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">Giới thiệu</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">Dịch vụ</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">Dự án tiêu biểu</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">Liên hệ</a></li>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'home') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/home/index'; ?>" class="navigation__link">Trang chủ</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'introduce') ? 'navigation__active' : '' ?>"><a href="#" class="navigation__link">Giới thiệu</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'product') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'service') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/service/service_list'; ?>" class="navigation__link">Dịch vụ</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'project') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/project/project_list'; ?>" class="navigation__link">Dự án tiêu biểu</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'contact') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/contact/index'; ?>" class="navigation__link">Liên hệ</a></li>
                     </ul>
                     <div class="navigation__block-form">
                         <form action="<?php echo getFullHost() . "/home/search/"; ?>" method="get"   class="navigation__form"><input type="text" id="search_pro" name="search_product" value="<?php echo isset($_GET['search_product']) ? $_GET['search_product'] : ''; ?>" placeholder="Search..." class="navigation__input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"/><button type="submit" class="navigation__submit"><i class="navigation__icon flaticon-search"></i></button></form>
                     </div>
                 </nav>
-<<<<<<< HEAD
                 <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path'] != 'application/views/site/user/change-password.php'): ?>
-=======
-                <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path']  != 'application/views/site/user/change-password.php'): ?>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                     <div data-slidesToShow="1" data-slidesToScroll="1" data-dots="1" data-arrows="1" data-autoplay="1" class="comp-slider-header slider__list slider-general__list comp-slider">
                         <?php foreach ($data['banner'] as $ban): ?>
                             <figure class="slider-item"><a href="#" class="slider-item__link"><img src="<?php echo public_url('/assets/images/slider/') . $ban->image ?>" alt="vnbuilding slider" class="slider-item__image" /></a>
@@ -265,4 +236,4 @@
             </div>
         </nav>
     </div>
-</div>  
+</div> 

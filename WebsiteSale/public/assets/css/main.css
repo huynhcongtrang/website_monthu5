@@ -655,13 +655,14 @@ section+section {
 }
 
 .mfp-form .form-group {
-    margin-bottom: 0
+    margin-bottom: 0;
+    margin-top : 1rem;
 }
 
 .mfp-form .form-group input {
     width: 100%;
     border: 1px solid #e3e3e3;
-    border-radius: 3rem;
+    border-radius: 1rem;
     padding: 1.5rem
 }
 
@@ -3461,17 +3462,14 @@ section+section {
     font-size: 1.4rem
 }
 .wating_moment{
-    
+
     display: none;
 }
 .error-display-change{
     margin-left: 50px;
-<<<<<<< HEAD
 }
 .error_display_contact{
-    
+
     color : red;
     padding-left: 1em;
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
 }

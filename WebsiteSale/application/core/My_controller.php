@@ -4,11 +4,9 @@ include 'application\models\Catalog_Model.php';
 include 'application\models\Advisory_Model.php';
 include 'application\models\Banner_Model.php';
 include 'application\models\Info_company_Model.php';
-<<<<<<< HEAD
 include  'application\models\Service_model.php';
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
 include 'application\models\service_type_Model.php';
+
 
 session_start();
 class My_controller {

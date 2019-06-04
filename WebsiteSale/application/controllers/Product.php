@@ -84,6 +84,8 @@ class Product extends My_controller {
             $row->product_list = $product_list;
         }
         $this->data['product_list_dis'] = $list_product_dis; // cai nay dung hien thi ra conten
+        
+        $this->data['active_navigation'] = "product";
         $this->data['path'] = view_site('/site/product/product_list');
         render1('site/layout.php', $this->data);
     }
@@ -125,11 +127,7 @@ class Product extends My_controller {
 
         //get product concern
         $product_concern = $product_model->buldQueryParams([
-<<<<<<< HEAD
                     "select" => "id,name,discount,price,view,image_link,introduce",
-=======
-                    "select" => "id,name,view,image_link,decription",
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                     "where" => "id_catalog = " . $product_detail->id_catalog . " and id != " . $id,
                     "other" => "order by view desc limit 3"
                 ])->select()->loadAllRows();
@@ -144,8 +142,8 @@ class Product extends My_controller {
             }
         }
         $this->data['product_concern'] = $product_concern;
-<<<<<<< HEAD
 
+        $this->data['active_navigation'] = "product";
         $this->data['path'] = view_site('/site/product/product_detail');
         render1('site/layout.php', $this->data);
     }
@@ -222,11 +220,8 @@ class Product extends My_controller {
         }
         
         $this->data['list_product'] = $array_list_id_catalog;
+        $this->data['active_navigation'] = "product";
         $this->data['path'] = view_site('/site/product/product_follow_catalog');
-=======
-        
-        $this->data['path'] = view_site('/site/product/product_detail');
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
         render1('site/layout.php', $this->data);
     }
 
@@ -239,10 +234,7 @@ if (get_rgetment(2) == 'product') {
         $pro->product_list();
     } else if (get_rgetment(3) == 'view-detail') {
         $pro->ViewDetail();
-<<<<<<< HEAD
     } else if (get_rgetment(3) == 'product-follow-catalog') {
         $pro->LoadListProductFollowCatalog();
-=======
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
     }
 }

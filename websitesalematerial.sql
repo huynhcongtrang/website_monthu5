@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 02, 2019 lúc 05:25 PM
+-- Thời gian đã tạo: Th6 04, 2019 lúc 08:21 PM
 -- Phiên bản máy phục vụ: 10.1.34-MariaDB
 -- Phiên bản PHP: 7.2.7
 
@@ -228,15 +228,15 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `id_catalog`, `id_maker`, `name`, `price`, `discount`, `introduce`, `decription`, `element`, `content`, `image_link`, `total`, `gift`, `view`, `rating`, `created`) VALUES
-(1, 3, 0, 'Giấy dầu xây dựng vật liệu KFC', '1000000.0000', 20, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', 'Giấy dầu là vật liệu hiện nay được dùng rộng rãi trong các công trình xây dựng dân dụng và công nghiệp như làm khu công nghiệp, làm đường bê tông, chống thấm mặt cầu, chống thấm sân bay. Giấy Dầu là vật liệu lót dưới cho công trình bê tông…', '- Nhựa đường;\r\n- Giấy Karaf;\r\n- Bột đá;\r\n- Mành chịu cơ tính;\r\n- Một số phụ gia khác.', 'Đặc điểm của Giấy dầu xây dựng.\r\n- Giấy dầu xây dựng màu đen, đóng gói thành cuộn:\r\n- Khổ cuộn: 1m\r\n- Chiều dài cuộn: 7m, 10m, 15m, 20m\r\n- Nguyên liệu sản xuất chính: Nhựa đường, giấy karat, bột đá, mành chịu cơ tính và một số phụ gia khác\r\n- Trọng lượng:\r\n- Giấy dầu loại thường: 350g/m2\r\n- Giấy dầu loại nặng: 600g/m2\r\nCác chức năng chính của tấm Giấy dầu tóm tắt như sau:\r\n- Mục đích sử dụng của lớp Giấy dầu trong kết cấu mặt đường Bê Tông Xi măng:\r\n- Làm lớp tạo phẳng, giảm ma sát giữa lớp mặt đường bê tông xi măng và móng đường khi tấm bê tông xi măng giãn nở do nhiệt.\r\n- Tránh không cho lớp móng hút nước trong bê tông xi măng mặt đường khi đang ninh kết làm giảm chất lượng bê tông\r\n- Làm lớp cách ly giữa lớp móng giảm ma sát (thường làm bằng cát dày 2-5cm) và lớp bê tông xi măng mặt đường.\r\n- Do vậy có thể thấy sự cần thiết phải dùng lớp giấy dầu lót trong kết cấu bê tông xi măng và tấm này phải là loại đủ độ dày và độ cứng để giữ phẳng đáy tấm bê tông xi măng và loại trừ các yếu tố ảnh hưởng đến chất lượng trong thi công.\r\nMục đích sử dụng của Giấy dầu trong trường hợp khác:\r\n- Làm máng che mưa cho rãnh cây cao su trong quá trình thu hoạch mủ cao su;\r\n- Dùng để che phủ tạm thời cho mái nhà...\r\nThông tin cụ thể về sản phẩm quý khách vui lòng liên hệ với công ty VNBUILDING để được tư vấn và giá tốt nhất thị trường.', '01.png', 20, '', 544, 4, '1998-01-14 00:00:00'),
-(2, 2, 0, 'Vải địa kỹ thuật không dệt Aritex', '3350000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '02.png', 10, '', 291, 2, '2019-02-25 00:00:00'),
+(1, 3, 0, 'Giấy dầu xây dựng vật liệu KFC', '1000000.0000', 20, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', 'Giấy dầu là vật liệu hiện nay được dùng rộng rãi trong các công trình xây dựng dân dụng và công nghiệp như làm khu công nghiệp, làm đường bê tông, chống thấm mặt cầu, chống thấm sân bay. Giấy Dầu là vật liệu lót dưới cho công trình bê tông…', '- Nhựa đường;\r\n- Giấy Karaf;\r\n- Bột đá;\r\n- Mành chịu cơ tính;\r\n- Một số phụ gia khác.', 'Đặc điểm của Giấy dầu xây dựng.\r\n- Giấy dầu xây dựng màu đen, đóng gói thành cuộn:\r\n- Khổ cuộn: 1m\r\n- Chiều dài cuộn: 7m, 10m, 15m, 20m\r\n- Nguyên liệu sản xuất chính: Nhựa đường, giấy karat, bột đá, mành chịu cơ tính và một số phụ gia khác\r\n- Trọng lượng:\r\n- Giấy dầu loại thường: 350g/m2\r\n- Giấy dầu loại nặng: 600g/m2\r\nCác chức năng chính của tấm Giấy dầu tóm tắt như sau:\r\n- Mục đích sử dụng của lớp Giấy dầu trong kết cấu mặt đường Bê Tông Xi măng:\r\n- Làm lớp tạo phẳng, giảm ma sát giữa lớp mặt đường bê tông xi măng và móng đường khi tấm bê tông xi măng giãn nở do nhiệt.\r\n- Tránh không cho lớp móng hút nước trong bê tông xi măng mặt đường khi đang ninh kết làm giảm chất lượng bê tông\r\n- Làm lớp cách ly giữa lớp móng giảm ma sát (thường làm bằng cát dày 2-5cm) và lớp bê tông xi măng mặt đường.\r\n- Do vậy có thể thấy sự cần thiết phải dùng lớp giấy dầu lót trong kết cấu bê tông xi măng và tấm này phải là loại đủ độ dày và độ cứng để giữ phẳng đáy tấm bê tông xi măng và loại trừ các yếu tố ảnh hưởng đến chất lượng trong thi công.\r\nMục đích sử dụng của Giấy dầu trong trường hợp khác:\r\n- Làm máng che mưa cho rãnh cây cao su trong quá trình thu hoạch mủ cao su;\r\n- Dùng để che phủ tạm thời cho mái nhà...\r\nThông tin cụ thể về sản phẩm quý khách vui lòng liên hệ với công ty VNBUILDING để được tư vấn và giá tốt nhất thị trường.', '01.png', 20, '', 549, 4, '1998-01-14 00:00:00'),
+(2, 2, 0, 'Vải địa kỹ thuật không dệt Aritex', '3350000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '02.png', 10, '', 296, 2, '2019-02-25 00:00:00'),
 (3, 11, 0, 'Lưới mắt cá b40 bọc nhựa PVC', '356000000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '03.png', 15, '', 132, 3, '2016-12-02 00:00:00'),
-(4, 1, 0, 'Giấy dầu xây dựng chống thấm ', '356000000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '06.png', 12, '', 117, 1, '0000-00-00 00:00:00'),
+(4, 1, 0, 'Giấy dầu xây dựng chống thấm ', '356000000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '06.png', 12, '', 120, 1, '0000-00-00 00:00:00'),
 (5, 5, 0, 'Dây thép gai mạ kẽm tiêu chuẩn ', '256000000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '07.png', 5, '', 132, 0, '2016-12-02 00:00:00'),
-(6, 2, 0, 'Vải địa kỹ thuật không dệt G10 chất lượng đảm bảo', '256000000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '08.png', 8, '', 107, 0, '2016-12-02 00:00:00'),
+(6, 2, 0, 'Vải địa kỹ thuật không dệt G10 chất lượng đảm bảo', '256000000.0000', 5, 'Được mạ kẽm theo tiêu chuẩn TCVN 2053-93, ASTM A475, BS443, EN 10244 tùy theo yêu cầu của khách hàng', '', '', '', '08.png', 8, '', 110, 0, '2016-12-02 00:00:00'),
 (7, 1, 0, 'Giấy dầu chống thấm', '356000000.0000', 3, 'Làm lớp tạo phẳng, giảm ma sát giữa lớp mặt và móng đường', '', '', '', '11.jpg', 18, '', 102, 0, '2016-12-02 00:00:00'),
 (8, 1, 0, 'Giấy dầu dan dụng', '356000000.0000', 3, 'Tránh không cho lớp móng hút nước trong bê tông mặt đường khi đang ninh kết làm giảm chất lượng bê tông', '', '', '', '12.jpg', 19, '', 100, 0, '2016-12-02 00:00:00'),
-(9, 1, 0, 'Giấy dầu cao cấp chuẩn ACB', '25000000.0000', 7, 'Làm máng che mưa cho rãnh cây cao su trong quá trình thu hoạch mủ cao su', '', '', '', '13.jpg', 25, '', 207, 0, '2016-12-02 00:00:00'),
+(9, 1, 0, 'Giấy dầu cao cấp chuẩn ACB', '25000000.0000', 7, 'Làm máng che mưa cho rãnh cây cao su trong quá trình thu hoạch mủ cao su', '', '', '', '13.jpg', 25, '', 208, 0, '2016-12-02 00:00:00'),
 (10, 14, 0, 'Lưới mắt cáo bọc nhựa', '356000000.0000', 3, 'Lưới mắt cáo bọc nhựa là loại lưới mắt cáo xoắn ba chao được sản xuất từ các loại dây thép có bọc thêm lớp nhựa PVC nhằm hạn chế tối đa tính axit và ăn mòn của môi trường bên ngoài.', '', '', '', '14.jpg', 20, '', 153, 0, '2016-02-02 00:00:00'),
 (11, 14, 0, 'Lưới mắt cáo', '356000000.0000', 3, 'Lưới mắt cáo là loại lưới được sản xuất từ các loại dây thép mạ kẽm, được xoắn 3 chao tạo thành các ô hình lục giác.', '', '', '', '15.jpg', 20, '', 152, 0, '2016-02-02 00:00:00'),
 (12, 13, 0, 'Dây thép gia', '356000000.0000', 3, 'Dây thép gai được dùng làm vòng rào bảo vệ, tường rào bảo vệ trong các công trình an ninh quốc phòng và dân dụng khác.', '', '', '', '16.jpg', 18, '', 132, 0, '2016-12-02 00:00:00'),
@@ -333,10 +333,21 @@ INSERT INTO `service` (`id`, `id_type_service`, `name`, `introduce`, `decription
 CREATE TABLE `transaction` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `payment` tinyint(4) NOT NULL,
   `amount` decimal(15,4) NOT NULL,
+  `discount` decimal(15,2) NOT NULL,
+  `status_payment` int(11) NOT NULL,
+  `status_ship` int(11) NOT NULL,
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `transaction`
+--
+
+INSERT INTO `transaction` (`id`, `id_user`, `address`, `payment`, `amount`, `discount`, `status_payment`, `status_ship`, `created`) VALUES
+(1, 22, '87 Xuân Diệu, Quận 12 , Tp Hồ Chí Minh', 1, '155000.0000', '3000.00', 1, 1, '2019-06-03 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -378,23 +389,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `phone`, `address`, `password`, `created`) VALUES
-(1, 'Trạng', 'trang@gmail.com', '0326646934', 'Quan 12', '53DAE3F03E5B838AC6F740CDA680B9F237211C64214EE422F0A65AA80C2E15AFA187BDE3DE3B3C3DA3E27EFB9FADA7D5BAEA3D8D9DE39524E04BCD670938D484', '2025-02-19 00:00:00'),
 (6, 'Trang', 'huynh@gmail.com', '0326646934', 'Quan 12', 'b0412597dcea813655574dc54a5b74967cf85317f0332a2591be7953a016f8de56200eb37d5ba593b1e4aa27cea5ca27100f94dccd5b04bae5cadd4454dba67d', '2019-05-05 17:26:41'),
-(7, 'Trang', '1huynh@gmail.com', '0326646934', 'Quan 12', 'fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe', '2019-05-05 17:27:40'),
-(8, 'Trang', 'huynhtrang@gmail.com', '0326646934', 'Quan 13', 'e13efc991a9bf44bbb4da87cdbb725240184585ccaf270523170e008cf2a3b85f45f86c3da647f69780fb9e971caf5437b3d06d418355a68c9760c70a31d05c7', '2019-05-05 17:32:21'),
-(9, 'Trang', 'huynh123@gmail.com', '0326646934', 'Quan 13', 'e13efc991a9bf44bbb4da87cdbb725240184585ccaf270523170e008cf2a3b85f45f86c3da647f69780fb9e971caf5437b3d06d418355a68c9760c70a31d05c7', '2019-05-05 17:33:42'),
-(10, 'Trạng Huỳnh', 'huynhcongtrang12@gmail.com', '0326646934', 'Quận 12', 'd9e6762dd1c8eaf6d61b3c6192fc408d4d6d5f1176d0c29169bc24e71c3f274ad27fcd5811b313d681f7e55ec02d73d499c95455b6b5bb503acf574fba8ffe85', '2019-05-05 17:41:33'),
-(11, 'Trạng', 'huynhcong12@gmail.com', '0326646934', 'Quận 12', 'e13efc991a9bf44bbb4da87cdbb725240184585ccaf270523170e008cf2a3b85f45f86c3da647f69780fb9e971caf5437b3d06d418355a68c9760c70a31d05c7', '2019-05-05 17:42:47'),
-(12, 'trang', 'huynh1234@gmail.com', '0326646934', 'Quận 12', 'd9e6762dd1c8eaf6d61b3c6192fc408d4d6d5f1176d0c29169bc24e71c3f274ad27fcd5811b313d681f7e55ec02d73d499c95455b6b5bb503acf574fba8ffe85', '2019-05-05 17:43:27'),
-(13, 'Trạng', 'huynhtrang1234567@gmail.com', '0326646934', 'Quận 12', 'e13efc991a9bf44bbb4da87cdbb725240184585ccaf270523170e008cf2a3b85f45f86c3da647f69780fb9e971caf5437b3d06d418355a68c9760c70a31d05c7', '2019-05-05 17:45:37'),
-(14, 'trabg', 'trang12123123@gmail.com', '0326646934', 'Quận 12', 'e13efc991a9bf44bbb4da87cdbb725240184585ccaf270523170e008cf2a3b85f45f86c3da647f69780fb9e971caf5437b3d06d418355a68c9760c70a31d05c7', '2019-05-05 17:47:31'),
-(15, 'trang', 'trang978982@gmail.com', '0326646934', 'Quan 12', 'fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe', '2019-05-05 17:48:35'),
-(16, 'trang', 'trang8787@gmail.com', '0326646934', 'Quan 13', 'fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe', '2019-05-05 17:50:11'),
-(17, 'trang', 'trang1@gmail.com', '0326646935', 'Quan 12', 'e13efc991a9bf44bbb4da87cdbb725240184585ccaf270523170e008cf2a3b85f45f86c3da647f69780fb9e971caf5437b3d06d418355a68c9760c70a31d05c7', '2019-05-05 18:01:18'),
-(18, 'Trang', 'meohuynhkute12@gmail.com', '0326646937', 'Quan 12', 'd9e6762dd1c8eaf6d61b3c6192fc408d4d6d5f1176d0c29169bc24e71c3f274ad27fcd5811b313d681f7e55ec02d73d499c95455b6b5bb503acf574fba8ffe85', '2019-05-09 12:33:25'),
-(19, 'Trang', 'meohuynhkute112@gmail.com', '0326646938', 'Quan 13', 'fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe', '2019-05-09 15:31:11'),
-(20, 'Huynh cong Trang', 'huynh1@gmail.com', '0326646936', 'quan 13', 'b0412597dcea813655574dc54a5b74967cf85317f0332a2591be7953a016f8de56200eb37d5ba593b1e4aa27cea5ca27100f94dccd5b04bae5cadd4454dba67d', '2019-05-19 03:59:31'),
-(21, 'trang', 'huynh12@gmail.com', '0326646940', 'Quan 12', 'b0412597dcea813655574dc54a5b74967cf85317f0332a2591be7953a016f8de56200eb37d5ba593b1e4aa27cea5ca27100f94dccd5b04bae5cadd4454dba67d', '2019-05-22 13:06:22');
+(22, 'Trạng Công Huỳnh', 'trang@gmail.com', '0326646941', '87 Xuan dieu , Phường Tân Chánh Hiệp , Quận 1 , Tp. Hồ Chí Minh', 'b0412597dcea813655574dc54a5b74967cf85317f0332a2591be7953a016f8de56200eb37d5ba593b1e4aa27cea5ca27100f94dccd5b04bae5cadd4454dba67d', '2019-06-03 22:33:06');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -522,7 +518,7 @@ ALTER TABLE `comment_product`
 -- AUTO_INCREMENT cho bảng `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `detail_transaction`
@@ -570,7 +566,7 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT cho bảng `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `typeservice`
@@ -582,7 +578,7 @@ ALTER TABLE `typeservice`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
