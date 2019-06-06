@@ -34,13 +34,8 @@
                         </div>
                         <div class="box-wrapper__nav-bar">
                             <ul class="box-wrapper__list">
-<<<<<<< HEAD
                                 <li class="box-wrapper__item"><a href="<?php echo getFullHost().'/home/index';?>" class="box-wrapper__link">Trang chủ</a></li>
                                 <li class="box-wrapper__item"><a href="<?php echo getFullHost().'/product/product_list';?>" class="box-wrapper__link">Sản phẩm</a></li>
-=======
-                                <li class="box-wrapper__item"><a href="#" class="box-wrapper__link">Trang chủ</a></li>
-                                <li class="box-wrapper__item"><a href="#" class="box-wrapper__link">Sản phẩm</a></li>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                 <li class="box-wrapper__item"><?php echo $data['product_detail']->name_catalog ?></li>
                             </ul>
                         </div>
@@ -49,11 +44,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="box-product box-product--product">
-<<<<<<< HEAD
                                     <div class="box-product__image"><a href="<?php echo public_url('/assets/images/section-products/') . $data['product_detail']->image_link ?>" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-products/') . $data['product_detail']->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-=======
-                                    <div class="box-product__image"><a href="<?php echo public_url('/assets/images/section-products/') . $data['product_detail']->image_link ?>" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/01.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                 </div>
                             </div>
                             <div class="col-6">
@@ -148,11 +139,7 @@
 
                 <section class="section-facebook facebook">
                     <h2 class="sub-title facebook__title">Bình luận</h2>
-<<<<<<< HEAD
                     <div class="fb-comments" data-href="http://localhost/websitesale/product/view-detail/<?php echo $data['product_detail']->id; ?>" data-width="700px" data-numposts="5"></div>
-=======
-                    <div class="fb-comments" data-href="http://localhost/websitesale/product/view-detail/<?php echo $data['product_detail']->id;?>" data-width="700px" data-numposts="5"></div>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                 </section>
 
                 <?php if (!empty($data['product_concern'])): ?>
@@ -162,7 +149,6 @@
                             <div class="row">
                                 <?php foreach ($data['product_concern'] as $pro_concern): ?>
                                     <div class="col-4">
-<<<<<<< HEAD
                                         <div class="box-product box-product--product">
                                             <div class="box-product__image"><img src="<?php echo public_url('/assets/images/section-products/') . $pro_concern->image_link ?>" alt="Rọ đá vnbuilding" class="box-product__photo">
                                                 <div class="box-product__buttons"><button type="button" class="box-product__button box-product__button--button">Thêm vào giỏ hàng</button><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro_concern->id ?>" class="box-product__button box-product__button--link">Xem chi tiết</a></div><span class="box-product__onsale">-<?php echo $pro_concern->discount ?>%</span>
@@ -176,17 +162,6 @@
                                                     <div class="box-product__comment"><i class="box-product__icon flaticon-support"></i><a href="#" class="box-product__link box-product__link--vc"><?php echo $pro_concern->totalcommnet; ?> Bình luận</a></div>
                                                 </div>
                                                 <div class="box-product__circles"><i class="icon fas fa-circle blue"></i><i class="icon fas fa-circle orange"></i><i class="icon fas fa-circle red"></i><i class="icon fas fa-circle yellow"></i><i class="icon fas fa-circle black"></i></div>
-=======
-                                        <div class="box-product box-product--hover box-product--product">
-                                            <div class="box-product__image"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro_concern->id ?>" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-products/') . $pro_concern->image_link ?>" alt="Rọ đá vnbuilding" class="box-product__photo"></a></div>
-                                            <div class="box-product__content">
-                                                <h3 class="box-product__title"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro_concern->id ?>" class="box-product__link box-product__link--title"><?php echo $pro_concern->name ?></a></h3>
-                                                <p class="box-product__description"><?php echo $pro_concern->decription ?></p>
-                                                <div class="box-product__view-comment">
-                                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc"><?php echo $pro_concern->view ?> Lượt xem</a></div>
-                                                    <div class="box-product__comment"><i class="box-product__icon flaticon-support"></i><a href="#" class="box-product__link box-product__link--vc"><?php echo $pro_concern->totalcommnet ?> Bình luận</a></div>
-                                                </div>
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                             </div>
                                         </div>
                                     </div>

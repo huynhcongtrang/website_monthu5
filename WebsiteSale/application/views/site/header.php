@@ -1,18 +1,16 @@
-<script src="<?php echo public_url() ?>/assets/js/jquery-ui.js"></script>
-<link type="text/css" href="<?php echo public_url() ?>/assets/js/jquery-ui.css" rel="stylesheet">
-<script src="<?php echo public_url() ?>/assets/js/Login.js"></script>
-<script src="<?php echo public_url() ?>/assets/js/Register.js"></script>
-<script src="<?php echo public_url() ?>/assets/js/GetPassword.js"></script>
-<script src="<?php echo public_url() ?>/assets/js/Order.js"></script>
 <script>
-
     $(function () {
-        $("#search_pro").autocomplete({
-            source: <?php echo $data['product_list_search']; ?>
-        });
+        $("#search").autocomplete({
+            source: <?php echo $data['product_list_search'] ?>
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            var inner_html = "<div class='list_item_container'><div class='image'><img src='"+item.image+"' ></div><div class='label'><h4><b>"+item.label+"</b></h4><span class = 'price_autocom'>500,000,00đ<span></div></div>"
+            return $("<li class='ui-autocomplete-row'></li>")
+                    .data("item.autocomplete", item)
+                    .append(inner_html)
+                    .appendTo(ul);
+        };
     });
 </script>
-</div>
 <div class="header__top-bar">
     <div class="container">
         <div class="row">
@@ -55,17 +53,41 @@
                                 </div>
                                 <div id="register-form" class="mfp-block mfp-form mfp-hide"><i class="icon fas fa-edit"></i>
                                     <h4>Đăng ký</h4><button type="button" class="mfp-close">x</button>
-                                    <div class="form-group"><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
+                                    <div class="form-group"><label>Họ và tên (*):</label><input type="text" id="name-register" name="name-register" placeholder="Nhập vào tên của bạn" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-name"></p>
-                                    <div class="form-group"><input type="text" id="phone-register" name="phone-register" placeholder="Nhập vào số điện thoại của bạn" required="required" /></div>
+                                    <div class="form-group"><label>Số điện thoại (*):</label><input type="text" id="phone-register" name="phone-register" placeholder="Nhập vào số điện thoại của bạn" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-phone"></p>
-                                    <div class="form-group"><input type="text" id="address-register" name="address-register" placeholder="Nhập vào địa chỉ của bạn" required="required" /></div>
+                                    <!--<div class="form-group"><label>Địa chỉ (*):</label><input type="text" id="address-register" name="address-register" placeholder="Nhập vào địa chỉ của bạn" required="required" /></div>-->
+
+                                    <div class="form-group">
+                                        <label>Địa chỉ (*):</label>
+                                        <div class="content-address">
+
+                                            <select class="selectpicker form-control select-control" id="province-select-address" data-container="body" data-live-search="true" title="Chọn tỉnh, thành phố..." data-hide-disabled="true">
+                                                <option value="Tp. Hồ Chí Minh">Hồ chí minh</option>
+                                            </select>
+
+                                            <select class="selectpicker form-control select-control" id="district-select-address" data-container="body" data-live-search="true" title="Chọn quận, huyện ..." data-hide-disabled="true">
+                                                <option value="Quận 1">Qận 1</option>
+                                            </select>
+
+                                            <select class="selectpicker form-control select-control" id="ward-select-address" data-container="body" data-live-search="true" title="Chọn phường, thị xã ...." data-hide-disabled="true">
+                                                <option value="Phường Tân Chánh Hiệp">Phường Tân Chánh Hiệp</option>
+                                            </select>
+
+                                            <input type="text" id="street-register" name="address-register" placeholder="Nhập vào số nhà, đường.." required="required" />
+
+                                        </div>
+                                    </div>
                                     <p class="error-display-detail" id="error-display-address"></p>
-                                    <div class="form-group"><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
+
+                                    <div class="form-group"><label>Email (*):</label><input type="email" id="email-register" name="email-register" placeholder="Nhập vào địa chỉ Email" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-email"></p>
-                                    <div class="form-group"><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
+                                    <div class="form-group"><label>Mật khẩu (*):</label><input type="password" id="password-register" name="password-register" placeholder="Nhập vào mật khẩu" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-password"></p>
-                                    <div class="form-group"><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div>
+
+                                    <p class="error-display-detail" id=""></p>
+                                    <div class="form-group"><label>Nhập lại mật khẩu (*):</label><input type="password" id="password-again" name="password-again" placeholder="Nhập lại mật khẩu" required="required" /></div>
                                     <p class="error-display-detail" id="error-display-repassword"></p>
                                     <p class="error-display" id="error-display-register"></p>
                                     <button type="submit" class="button-submit" id="submit-register">Đăng ký</button>
@@ -85,37 +107,46 @@
                             <li class="function__item"><a href="javascript:void(0)" class="function__link" ><i class="function__icon fas fa-user"></i><span class="function__span">Tài khoản</span></a>
                                 <div class="function__content function-hover">
                                     <ul class="function-hover__list">
-                                        <li class="function-hover__item"><a href="#" class="link">Tài khoản</a></li>
+                                        <li class="function-hover__item"><a href="<?php echo getFullHost() . '/user/account'; ?>" class="link">Tài khoản</a></li>
                                         <li class="function-hover__item"><a href="<?php echo getFullHost() . '/user/logout'; ?>" class="link">Đăng xuất</a></li>
                                     </ul>
                                 </div>
                             </li>
                         <?php endif; ?>
-                        <li class="function__item"><a href="#" class="function__link"><i class="function__icon fas fa-shopping-cart"></i><span class="function__number function__span" id ="txtNumSanPham"><?php echo Count_Hang_In_Cart() ?> Sản phẩm</span></a>
-                            <div class="function__content cart_order" > 
-                            <?php if(isset($_SESSION['cart'])&&!empty($_SESSION['cart'])):?>
-                            <div class="product__show">
+                        <li class="function__item"><a href="#" class="function__link"><i class="function__icon fas fa-shopping-cart"></i><span class="function__number function__span">0 Sản phẩm</span></a>
+                            <div class="function__content">
+                                <div class="product__show">
                                     <ul class="product__list">
-                                    
-                                    <?php foreach($_SESSION['cart'] as $item): ?>
-                                        <li class="product__item" id='id_item_<?php echo $item->id?>'>
-                                        <!--$pro=(object)array('id'=>$idsp,'name'=>$nameSp,'price'=>$gia,'image'=>$linkImage,'quantity'=>1);--> 
-                                            <figure class="product__image"><img src="<?php echo $item->image ?>" class="product__photo" /><a href="javascript:void(0)" class="product__icon"><i class="fas fa-times"></i></a></figure>
-                                            <div class="product__content"><a href="#" class="product__link"><?php echo $item->name ?></a>
-                                                <div class="product__total"><span class="product__price"><?php echo $item->price ?></span><span class="product__quantity">x<?php echo $item->quantity ?></span></div>
+                                        <li class="product__item">
+                                            <figure class="product__image"><img src="<?php echo public_url() ?>/assets/images/section-products/01.png" class="product__photo" /><a href="javascript:void(0)" class="product__icon"><i class="fas fa-times"></i></a></figure>
+                                            <div class="product__content"><a href="#" class="product__link">Rọ đá - Sự bền vững cho mọi công trình</a>
+                                                <div class="product__total"><span class="product__price">3.350.000₫</span><span class="product__quantity">x1</span></div>
                                             </div>
                                         </li>
-                                    <?php endforeach; ?>
+                                        <li class="product__item">
+                                            <figure class="product__image"><img src="<?php echo public_url() ?>/assets/images/section-products/02.png" class="product__photo" /><a href="javascript:void(0)" class="product__icon"><i class="fas fa-times"></i></a></figure>
+                                            <div class="product__content"><a href="#" class="product__link">Rọ đá - Sự bền vững cho mọi công trình</a>
+                                                <div class="product__total"><span class="product__price">3.350.000₫</span><span class="product__quantity">x1</span></div>
+                                            </div>
+                                        </li>
+                                        <li class="product__item">
+                                            <figure class="product__image"><img src="<?php echo public_url() ?>/assets/images/section-products/03.png" class="product__photo" /><a href="javascript:void(0)" class="product__icon"><i class="fas fa-times"></i></a></figure>
+                                            <div class="product__content"><a href="#" class="product__link">Rọ đá - Sự bền vững cho mọi công trình</a>
+                                                <div class="product__total"><span class="product__price">3.350.000₫</span><span class="product__quantity">x1</span></div>
+                                            </div>
+                                        </li>
+                                        <li class="product__item">
+                                            <figure class="product__image"><img src="<?php echo public_url() ?>/assets/images/section-products/04.png" class="product__photo" /><a href="javascript:void(0)" class="product__icon"><i class="fas fa-times"></i></a></figure>
+                                            <div class="product__content"><a href="#" class="product__link">Rọ đá - Sự bền vững cho mọi công trình</a>
+                                                <div class="product__total"><span class="product__price">3.350.000₫</span><span class="product__quantity">x1</span></div>
+                                            </div>
+                                        </li>
                                     </ul>
                                     <div class="product__sum">
-                                        <p class="product__sum-span">Tổng tiền:<span class="number txtTongTien" ><?php echo Compute_All_Cart() ?>₫</span></p>
+                                        <p class="product__sum-span">Tổng tiền:<span class="number">10.350.000₫</span></p>
                                     </div>
                                     <div class="product__buttons"><a href="#" class="product__button">Xem giỏ hàng</a><a href="#" class="product__button">Thanh toán </a></div>
                                 </div>
-                            <?php else:  ?>
-                                <h2>Giỏ Hàng Trống</h2>
-                            <?php endif; ?>
-                                
                             </div>
                         </li>
                     </ul>
@@ -187,15 +218,18 @@
             <div class="menu-main">
                 <nav class="navigation">
                     <ul class="navigation__list">
-                        <li class="navigation__item navigation__active"><a href="<?php echo getFullHost() . '/home/index'; ?>" class="navigation__link">Trang chủ</a></li>
-                        <li class="navigation__item"><a href="#" class="navigation__link">Giới thiệu</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/service/service_list'; ?>" class="navigation__link">Dịch vụ</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/project/project_list'; ?>" class="navigation__link">Dự án tiêu biểu</a></li>
-                        <li class="navigation__item"><a href="<?php echo getFullHost() . '/contact/index'; ?>" class="navigation__link">Liên hệ</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'home') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/home/index'; ?>" class="navigation__link">Trang chủ</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'introduce') ? 'navigation__active' : '' ?>"><a href="#" class="navigation__link">Giới thiệu</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'product') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/product/product_list'; ?>" class="navigation__link">Sản phẩm</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'service') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/service/service_list'; ?>" class="navigation__link">Dịch vụ</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'project') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/project/project_list'; ?>" class="navigation__link">Dự án tiêu biểu</a></li>
+                        <li class="navigation__item <?php echo ($data['active_navigation'] == 'contact') ? 'navigation__active' : '' ?>"><a href="<?php echo getFullHost() . '/contact/index'; ?>" class="navigation__link">Liên hệ</a></li>
                     </ul>
                     <div class="navigation__block-form">
-                        <form action="<?php echo getFullHost() . "/home/search/"; ?>" method="get"   class="navigation__form"><input type="text" id="search_pro" name="search_product" value="<?php echo isset($_GET['search_product']) ? $_GET['search_product'] : ''; ?>" placeholder="Search..." class="navigation__input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"/><button type="submit" class="navigation__submit"><i class="navigation__icon flaticon-search"></i></button></form>
+                        <form action="<?php echo getFullHost() . "/home/search/"; ?>" method="get"   class="navigation__form">
+                            <input type="text" name="search_product" id="search" class="navigation__input" placeholder="Nhập vào tên sản phẩm ...." autocomplete="off">
+                            <button type="submit" class="navigation__submit"><i class="navigation__icon flaticon-search"></i></button> 
+                        </form>
                     </div>
                 </nav>
                 <?php if ($data['path'] != 'application/views/site/user/sendcode.php' && $data['path'] != 'application/views/site/user/change-password.php'): ?>
@@ -209,4 +243,4 @@
             </div>
         </nav>
     </div>
-</div>  
+</div> 

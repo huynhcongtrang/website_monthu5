@@ -40,12 +40,12 @@ function displayPhone($phone) {
 }
 
 function get_date($time, $full_time = true) {
-    $format = '%d-%m-%Y';
+    $date = new DateTime($time);
     if ($full_time) {
-        $format = $format . '   %H:%i:%s';
+        return $date->format('d-m-Y H:i:s');
+    } else {
+        return $date->format("d-m-Y");
     }
-    $date = mdate($format, $time);
-    return $date;
 }
 
 function get_month($time) {
@@ -62,47 +62,30 @@ function get_rgetment($local) {
 
 function format_content($data) {
     $array_content = explode("-", $data);
-    foreach ($array_content as $con){
+    foreach ($array_content as $con) {
         echo '<br>';
-        echo "<li>- ".$con."</li>";
-        
+        echo "<li>- " . $con . "</li>";
     }
 }
+
 function format_content_service($data) {
     $array_content = explode("enter", $data);
-    foreach ($array_content as $con){
+    foreach ($array_content as $con) {
         echo '<br>';
-        echo "<li>- ".$con."</li>";
-        
+        echo "<li>- " . $con . "</li>";
     }
 }
-function Compute_All_Cart(){
-    $sum=0;
-    if(isset($_SESSION['cart'])){
-        foreach($_SESSION['cart'] as $item){
-            $tempstr=$item->price;
-            $pro=$item->quantity;
-            $tempstr=str_replace(',','',$tempstr);
-            $idRun=0; while($tempstr[$idRun]>='0'&&$tempstr[$idRun]<='9')$idRun=$idRun+1;
-            $str=substr($tempstr,0,$idRun);
-            $sum=$sum+(int)$str*(int)$pro;
-        }
-    }
-    else{
-        return 0;
-    }
-    return number_format($sum);
-    //return $sum;
-}
-function Count_Hang_In_Cart(){
-    $cnt=0;
-    if(isset($_SESSION['cart'])){
-        foreach($_SESSION['cart'] as $item){
-            $cnt=$cnt+1;
-        }
-    }
-    else{
-        return 0;
-    }
-    return $cnt;
+
+function convert_name($name){
+    $name = trim($name);
+    $name = str_replace(' ', '-', $name);
+    $name = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", 'a', $name);
+    $name = preg_replace("/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/", 'e', $name);
+    $name = preg_replace("/(ì|í|ị|ỉ|ĩ)/", 'i', $name);
+    $name = preg_replace("/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/", 'o', $name);
+    $name = preg_replace("/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/", 'u', $name);
+    $name = preg_replace("/(ỳ|ý|ỵ|ỷ|ỹ)/", 'y', $name);
+    $name = preg_replace("/(đ)/", 'd', $name);
+    $name = strtolower($name);
+    return $name;
 }

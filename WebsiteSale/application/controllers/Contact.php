@@ -17,6 +17,16 @@ class Contact extends My_controller {
                     "where" => "id = 1"
                 ])->select()->loadRow();
         $this->data['info_company'] = $info_company_de;
+        
+        //// hien thi xe nhieu nhat
+        $product_model = new Product_Model();
+        $product_list = $product_model->buldQueryParams([
+                    "select" => "id,name,view,image_link",
+                    "other" => "order by view desc limit 10"
+                ])->select()->loadAllRows();
+        $this->data['product_list'] = $product_list; 
+        
+        $this->data['active_navigation'] = "contact";
         $this->data['path'] = view_site('/site/contact/index');
         render1('site/layout.php', $this->data);
     }
@@ -37,7 +47,7 @@ $contact = new Contact();
 if (get_rgetment(2) == 'contact') {
     if (get_rgetment(3) == 'index') {
         $contact->index();
-    } else if (get_rgetment(3) == 'submit_contact') {
+    } else if (get_rgetment(3) == 'submit-contact') {
         $contact->SubmitContact();
     }
 }

@@ -1,4 +1,4 @@
-<script src="<?php echo public_url()?>assets/js/contact.js"></script>
+<script src="<?php echo public_url() ?>assets/js/contact.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-3">
@@ -7,76 +7,17 @@
                     <h2 class="most-view__title sub-title">Được xem nhiều</h2>
                     <div class="most-view__content">
                         <div class="box-product__list">
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/09.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Hộ lan tôn sóng, giải phân cách mềm</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/02.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Vải địa kỹ thuật không dệt Aritex</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/10.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Sơn kẻ đường, vạch kẻ đường cao cấp</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/07.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Dây thép gai mạ kẽm Vnbuilding</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/06.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Giấy dầu chống thấm Blue Magic</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/05.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Matit chèn khe Crack Master 1190</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/04.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Vải địa kỹ thuật dệt (PP) nhãn hiệu MAC</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/03.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Lưới mắt cáo B41 bọc nhựa PVC</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/02.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Vải địa kỹ thuật không dệt Aritex</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
-                            <div class="box-product box-product--hover wow fadeInUp">
-                                <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url() ?>/assets/images/section-products/01.png" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
-                                <div class="box-product__content">
-                                    <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title">Rọ đá - Sự bền vững cho mọi công trình</a></h3>
-                                    <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc">123 Lượt xem</a></div>
-                                </div>
-                            </div>
+                            <?php if (!empty($data['product_list'])): ?>
+                                <?php foreach ($data['product_list'] as $pro): ?>
+                                    <div class="box-product box-product--hover wow fadeInUp">
+                                        <div class="box-product__image most-view__image"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id  ?>" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-products/') . $pro->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                        <div class="box-product__content">
+                                            <h3 class="box-product__title"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id  ?>" class="box-product__link box-product__link--title"><?php echo $pro->name ?></a></h3>
+                                            <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id ?>" class="box-product__link box-product__link--vc"><?php echo $pro->view ?> Lượt xem</a></div>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </section>
@@ -109,10 +50,10 @@
                                     <?php if (!empty($data['info_company'])): ?>
                                         <li class="contact__item"><b>Trụ sở chính </b>
                                             <ul class="contact__info-list--sub">
-                                                <li><i class="flaticon-maps-and-flags"></i><span>Địa chỉ: <?php echo $data['info_company']->address?></span></li>
-                                                <li><i class="flaticon-call-answer"></i><span>Tel: <?php echo $data['info_company']->phone?></span></li>
+                                                <li><i class="flaticon-maps-and-flags"></i><span>Địa chỉ: <?php echo $data['info_company']->address ?></span></li>
+                                                <li><i class="flaticon-call-answer"></i><span>Tel: <?php echo $data['info_company']->phone ?></span></li>
                                                 <li><i class="flaticon-envelope"></i>
-                                                    <p>Email: <a href="mailto: <?php echo $data['info_company']->email?>" class="contact__link"><?php echo $data['info_company']->email?></a></p>
+                                                    <p>Email: <a href="mailto: <?php echo $data['info_company']->email ?>" class="contact__link"><?php echo $data['info_company']->email ?></a></p>
                                                 </li>
                                                 <li><i class="flaticon-internet"></i>
                                                     <p>Web: <a href="#" class="contact__link">www.vnbuilding.com.vn</a></p>
@@ -129,7 +70,7 @@
                                 <div class="contact__block-form">
                                     <div class="contact__form-title"><b>Thông tin liên hệ:</b></div>
                                     <div class="contact__form-content">
-                                        <form  method="post" class="contact__form" action="<?php echo getFullHost()."/contact/submit_contact"?>">
+                                        <form  method="post" class="contact__form" action="<?php echo getFullHost() . "/contact/submit-contact" ?>">
                                             <div class="contact__form-group"><label for="fullname" class="contact__label">Họ và tên (<span class="contact__color">*</span>)</label><input id="fullname" type="text" placeholder="Nhập đầy đủ họ tên" name="fullname" required="required" class="contact__input"><span class="error_display_contact" id="error_fullname"></span></div>
                                             <div class="contact__form-group"><label for="address" class="contact__label">Địa chỉ</label><input id="address" type="text" placeholder="Nhập địa chỉ" name="address" class="contact__input"><span class="error_display_contact" id="error_address"></span></div>
                                             <div class="contact__form-group"><label for="telephone" class="contact__label">Số điện thoại (<span class="contact__color">*</span>)</label><input id="telephone" type="tel" placeholder="Nhập số điện thoại" name="telephone" required="required" class="contact__input"><span class="error_display_contact" id="error_telephone"></span></div>
@@ -139,7 +80,9 @@
                                             <div class="contact__block-button"><button type="submit" class="contact__button contact__button--submit" >Gửi</button><button type="button" class="contact__button contact__button--cancel">Huỷ</button></div>
                                         </form>
                                     </div>
+
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -182,6 +125,7 @@
         </div>
     </div>
 </section>
+
 <script>
 
     function initMap1() {

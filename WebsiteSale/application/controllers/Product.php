@@ -84,6 +84,8 @@ class Product extends My_controller {
             $row->product_list = $product_list;
         }
         $this->data['product_list_dis'] = $list_product_dis; // cai nay dung hien thi ra conten
+        
+        $this->data['active_navigation'] = "product";
         $this->data['path'] = view_site('/site/product/product_list');
         render1('site/layout.php', $this->data);
     }
@@ -141,6 +143,7 @@ class Product extends My_controller {
         }
         $this->data['product_concern'] = $product_concern;
 
+        $this->data['active_navigation'] = "product";
         $this->data['path'] = view_site('/site/product/product_detail');
         render1('site/layout.php', $this->data);
     }
@@ -217,6 +220,7 @@ class Product extends My_controller {
         }
         
         $this->data['list_product'] = $array_list_id_catalog;
+        $this->data['active_navigation'] = "product";
         $this->data['path'] = view_site('/site/product/product_follow_catalog');
         render1('site/layout.php', $this->data);
     }

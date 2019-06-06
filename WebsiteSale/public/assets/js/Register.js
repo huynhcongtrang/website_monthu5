@@ -6,27 +6,20 @@
             var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             return regex.test(email);
         }
-<<<<<<< HEAD
         function validateVietnameseName(name) {
-        var firstLetter = "[A-EGHIK-VXYÂĐỔÔÚỨ]".normalize("NFC"),
-                otherLetters = "[a-eghik-vxyàáâãèéêìíòóôõùúýỳỹỷỵựửữừứưụủũợởỡờớơộổỗồốọỏịỉĩệểễềếẹẻẽặẳẵằắăậẩẫầấạảđ₫]".normalize("NFC"),
-                regexString = "^"
-                + firstLetter + otherLetters + "+\\s"
-                + "(" + firstLetter + otherLetters + "+\\s)*"
-                + firstLetter + otherLetters + "+$",
-                regexPattern = RegExp(regexString);
-        if (regexPattern.test(name.normalize("NFC"))) {
-            return true;
-        } else {
-            return false
+            var firstLetter = "[A-EGHIK-VXYÂĐỔÔÚỨ]".normalize("NFC"),
+                    otherLetters = "[a-eghik-vxyàáâãèéêìíòóôõùúýỳỹỷỵựửữừứưụủũợởỡờớơộổỗồốọỏịỉĩệểễềếẹẻẽặẳẵằắăậẩẫầấạảđ₫]".normalize("NFC"),
+                    regexString = "^"
+                    + firstLetter + otherLetters + "+\\s"
+                    + "(" + firstLetter + otherLetters + "+\\s)*"
+                    + firstLetter + otherLetters + "+$",
+                    regexPattern = RegExp(regexString);
+            if (regexPattern.test(name.normalize("NFC"))) {
+                return true;
+            } else {
+                return false
+            }
         }
-    }
-=======
-        function isName(name) {
-            var regex = /^[a-zA-Z]+$/;
-            return regex.test(name);
-        }
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
         function isAddress(address) {
             var regex = /^[0-9\-\(\)\s]+$/;
             return regex.test(address);
@@ -53,7 +46,12 @@
 
             var name = $("#name-register").val();
             var phone = $("#phone-register").val();
-            var address = $("#address-register").val();
+            //address
+            var province = $("#province-select-address").val();
+            var district = $("#district-select-address").val();
+            var ward = $("#ward-select-address").val();
+            var street = $("#street-register").val();
+            
             var email = $("#email-register").val();
             var password = $("#password-register").val();
             var repassword = $("#password-again").val();
@@ -61,17 +59,30 @@
             if (name == "") {
                 $("#error-display-name").text("Vui lòng nhập họ tên !");
                 check = false;
-<<<<<<< HEAD
-            }else if(validateVietnameseName(name)){
+            }else if (!validateVietnameseName(name)) {
                 $("#error-display-name").text("Kiểm tra lại họ tên !");
                 check = false;
-            }
-            else {
-=======
             } else {
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                 $("#error-display-name").text("");
             }
+            
+            if(province == ''){
+                $("#error-display-address").text("Vui lòng nhập tỉnh và thành phố ... !");
+                check = false;
+            }else if(district == ''){
+                $("#error-display-address").text("Vui lòng nhập quận, huyện ... !");
+                check = false;
+            }else if(ward == ''){
+                $("#error-display-address").text("Vui lòng nhập xã,phường ... !");
+                check = false;
+            }else if(street == ''){
+                $("#error-display-address").text("Vui lòng nhập số nhà, tên đường ... !");
+                check = false;
+            }else {
+                $("#error-display-address").text("");
+            }
+            
+            //check phone
             if (phone == "") {
                 $("#error-display-phone").text("Vui lòng nhập số điện thoại !");
                 check = false;
@@ -81,25 +92,18 @@
             } else {
                 $("#error-display-phone").text("");
             }
-            if (address == "") {
-                $("#error-display-address").text("Vui lòng nhập địa chỉ !");
-                check = false;
-            } else {
-                $("#error-display-address").text("");
-            }
+          
+            //check email
             if (email == "") {
                 $("#error-display-email").text("Vui lòng nhập địa chỉ email !");
                 check = false;
             } else if (!isEmail(email)) {
-<<<<<<< HEAD
                 $("#error-display-email").text("Email không đúng định dạng !");
-=======
-                $("#error-display-email").text("Email không hợp lệ !");
->>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                 check = false;
             } else {
                 $("#error-display-email").text("");
             }
+            //check passwrod
             if (password == "") {
                 $("#error-display-password").text("Vui lòng nhập mật khẩu !");
                 check = false;
@@ -109,6 +113,7 @@
             } else {
                 $("#error-display-password").text("");
             }
+            //check repassword
             if (repassword == "") {
                 $("#error-display-repassword").text("Vui lòng nhập lại mật khẩu !");
                 check = false;
@@ -121,6 +126,7 @@
             if (check == false) {
                 return;
             }
+            var address = street + " , " + ward + " , " + district + " , " + province;
             $.ajax({
                 url: 'http://localhost/websitesale/user/register',
                 type: 'POST',
@@ -128,7 +134,7 @@
                 data: {
                     name: name,
                     phone: phone,
-                    address: address,
+                    address : address,
                     email: email,
                     password: password
                 },

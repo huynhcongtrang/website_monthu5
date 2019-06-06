@@ -24,6 +24,8 @@ class Project extends My_controller {
                     "select" => "id,name,introduce,image_link",
                 ])->select()->loadAllRows();
         $this->data['project_list'] = $project_list;
+        
+        $this->data['active_navigation'] = "project";
         $this->data['path'] = view_site('/site/project/project_list');
         render1('site/layout.php', $this->data);
     }
