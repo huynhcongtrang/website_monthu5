@@ -9,14 +9,14 @@
                             <?php if (!empty($data['product_list'])): ?>
                                 <?php foreach ($data['product_list'] as $pro): ?>
                                     <div class="box-product box-product--hover wow fadeInUp">
-                                        <div class="box-product__image most-view__image"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id  ?>" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-products/') . $pro->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
+                                        <div class="box-product__image most-view__image"><a href="#" class="box-product__link--image"><img src="<?php echo public_url('/assets/images/section-products/') . $pro->image_link ?>" alt="Thi công màn chống thấm vnbuilding" class="box-product__photo"></a></div>
                                         <div class="box-product__content">
-                                            <h3 class="box-product__title"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id  ?>" class="box-product__link box-product__link--title"><?php echo $pro->name ?></a></h3>
-                                            <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id ?>" class="box-product__link box-product__link--vc"><?php echo $pro->view ?> Lượt xem</a></div>
+                                            <h3 class="box-product__title"><a href="<?php echo getFullHost() . '/product/view-detail/' . $pro->id ?>" class="box-product__link box-product__link--title"><?php echo $pro->name ?></a></h3>
+                                            <div class="box-product__view"><i class="box-product__icon flaticon-eye"></i><a href="#" class="box-product__link box-product__link--vc"><?php echo $pro->view ?> Lượt xem</a></div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
-                            <?php endif; ?>
+                            <?php endif; ?>  
                         </div>
                     </div>
                 </section>

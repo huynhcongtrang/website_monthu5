@@ -655,14 +655,13 @@ section+section {
 }
 
 .mfp-form .form-group {
-    margin-bottom: 0;
-    margin-top : 1rem;
+    margin-bottom: 0
 }
 
 .mfp-form .form-group input {
     width: 100%;
     border: 1px solid #e3e3e3;
-    border-radius: 1rem;
+    border-radius: 3rem;
     padding: 1.5rem
 }
 
@@ -3462,47 +3461,17 @@ section+section {
     font-size: 1.4rem
 }
 .wating_moment{
-
+    
     display: none;
 }
 .error-display-change{
     margin-left: 50px;
+<<<<<<< HEAD
 }
 .error_display_contact{
-
+    
     color : red;
     padding-left: 1em;
-}
-/*autocomple*/
-
-/*.container{
-    padding: 20px;
-}*/
-.list_item_container {
-    width: 100%;
-    float: left;
-    background-color: #f5f5f5;
-    border-bottom: 1px outset #666;
-}
-
-.image {
-    width: 15%;
-    float: left;
-    padding: 10px;
-}
-.image img{
-    width: 80px;
-    height : 60px;
-}
-.label{
-    margin-top: 8px;
-    width: 60%;
-    float:right;
-    overflow: hidden;
-    color: black;
-    text-align: left;
-}
-.price_autocom{
-    font-weight: bold;
-    color : #ed1111;
+=======
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
 }

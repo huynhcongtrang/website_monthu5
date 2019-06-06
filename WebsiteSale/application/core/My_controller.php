@@ -1,20 +1,15 @@
 <?php
-
 include 'application\models\Product_model.php';
 include 'application\models\Catalog_Model.php';
 include 'application\models\Advisory_Model.php';
 include 'application\models\Banner_Model.php';
 include 'application\models\Info_company_Model.php';
-include 'application\models\Service_model.php';
+include  'application\models\Service_model.php';
 include 'application\models\service_type_Model.php';
 
-
 session_start();
-
 class My_controller {
-
     public $data = array();
-
     public function __construct() {
         //info company
         $info_company = new Info_company_model();
@@ -49,51 +44,43 @@ class My_controller {
         }
         //pre($catalog_list);
         $this->data['catalog'] = $catalog_list;
-
+        
         //advisory
         $advisory_model = new Advisory_model();
-
+        
         $advisory_list = $advisory_model->buldQueryParams([
                     "select" => "*",
                 ])->select()->loadAllRows();
 //        pre($advisory_list);
-        $this->data['advisory'] = $advisory_list;
-        // service_type
-        $service_type_model = new Service_type_model();
-        $service_type_list = $service_type_model->buldQueryParams([
+         $this->data['advisory'] = $advisory_list;
+         // service_type
+         $service_type_model = new Service_type_model();
+         $service_type_list = $service_type_model->buldQueryParams([
                     "select" => "*",
                 ])->select()->loadAllRows();
-        $this->data['service_type_list'] = $service_type_list;
-
-        // banner
-
-        $banner_model = new Banner_model();
-
+         $this->data['service_type_list'] = $service_type_list;
+         
+         // banner
+         
+         $banner_model = new Banner_model();
+        
         $banner_list = $banner_model->buldQueryParams([
                     "select" => "*",
                     "other" => "order by created limit 3"
                 ])->select()->loadAllRows();
         //pre($banner_list);
-        $this->data['banner'] = $banner_list;
-        //produc_search
-        $product_model = new Product_Model();
-        $product_list_search = $product_model->buldQueryParams([
-                    "select" => "id,name as 'value',name as 'label', image_link as 'image'",
+         $this->data['banner'] = $banner_list;
+         //produc_search
+         $product_model = new Product_Model();
+         $product_list_search = $product_model->buldQueryParams([
+                    "select" => "id,name as 'label', name as 'value'",
                     "other" => "order by name desc"
                 ])->select()->loadAllRows();
-        foreach ($product_list_search as $product) {
-            $product->image =  public_url('/assets/images/section-products/').$product->image;
-        }
-        //pre($product_list_search);
+        
         $this->data['product_list_search'] = json_encode($product_list_search);
-        //pre($this->data['product_list_search']);
-
-
-
-        // tao cart
-        if (!isset($_SESSION['cart'])) {
-            $_SESSION['cart'] = array();
+        //cart khoi tao
+        if(!isset($_SESSION['cart'])){
+            $_SESSION['cart']=array();
         }
     }
-
 }
