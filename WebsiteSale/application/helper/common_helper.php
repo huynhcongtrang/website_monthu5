@@ -40,12 +40,12 @@ function displayPhone($phone) {
 }
 
 function get_date($time, $full_time = true) {
-    $date = new DateTime($time);
+    $format = '%d-%m-%Y';
     if ($full_time) {
-        return $date->format('d-m-Y H:i:s');
-    } else {
-        return $date->format("d-m-Y");
+        $format = $format . '   %H:%i:%s';
     }
+    $date = mdate($format, $time);
+    return $date;
 }
 
 function get_month($time) {
@@ -62,16 +62,47 @@ function get_rgetment($local) {
 
 function format_content($data) {
     $array_content = explode("-", $data);
-    foreach ($array_content as $con) {
+    foreach ($array_content as $con){
         echo '<br>';
-        echo "<li>- " . $con . "</li>";
+        echo "<li>- ".$con."</li>";
+        
     }
 }
-
 function format_content_service($data) {
     $array_content = explode("enter", $data);
-    foreach ($array_content as $con) {
+    foreach ($array_content as $con){
         echo '<br>';
-        echo "<li>- " . $con . "</li>";
+        echo "<li>- ".$con."</li>";
+        
     }
+}
+function Compute_All_Cart(){
+    $sum=0;
+    if(isset($_SESSION['cart'])){
+        foreach($_SESSION['cart'] as $item){
+            $tempstr=$item->price;
+            $pro=$item->quantity;
+            $tempstr=str_replace(',','',$tempstr);
+            $idRun=0; while($tempstr[$idRun]>='0'&&$tempstr[$idRun]<='9')$idRun=$idRun+1;
+            $str=substr($tempstr,0,$idRun);
+            $sum=$sum+(int)$str*(int)$pro;
+        }
+    }
+    else{
+        return 0;
+    }
+    return number_format($sum);
+    //return $sum;
+}
+function Count_Hang_In_Cart(){
+    $cnt=0;
+    if(isset($_SESSION['cart'])){
+        foreach($_SESSION['cart'] as $item){
+            $cnt=$cnt+1;
+        }
+    }
+    else{
+        return 0;
+    }
+    return $cnt;
 }

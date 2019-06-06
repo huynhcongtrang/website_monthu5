@@ -17,8 +17,6 @@ class Contact extends My_controller {
                     "where" => "id = 1"
                 ])->select()->loadRow();
         $this->data['info_company'] = $info_company_de;
-        
-        $this->data['active_navigation'] = "contact";
         $this->data['path'] = view_site('/site/contact/index');
         render1('site/layout.php', $this->data);
     }

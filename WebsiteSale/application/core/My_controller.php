@@ -7,7 +7,6 @@ include 'application\models\Info_company_Model.php';
 include  'application\models\Service_model.php';
 include 'application\models\service_type_Model.php';
 
-
 session_start();
 class My_controller {
     public $data = array();
@@ -79,6 +78,9 @@ class My_controller {
                 ])->select()->loadAllRows();
         
         $this->data['product_list_search'] = json_encode($product_list_search);
-
+        //cart khoi tao
+        if(!isset($_SESSION['cart'])){
+            $_SESSION['cart']=array();
+        }
     }
 }

@@ -50,7 +50,11 @@
                                                         <div class="box-product__buttons"><button type="button" class="box-product__button box-product__button--button">Thêm vào giỏ hàng</button><a href="<?php echo getFullHost().'/product/view-detail/'.$pro_list->id?>" class="box-product__button box-product__button--link">Xem chi tiết</a></div><span class="box-product__onsale">-<?php echo $pro_list->discount ?>%</span>
                                                     </div>
                                                     <div class="box-product__content">
+<<<<<<< HEAD
                                                         <h3 class="box-product__title"><a href="<?php echo getFullHost().'/product/view-detail/'.$pro_list->id?>" class="box-product__link box-product__link--title"><?php echo $pro_list->name; ?></a></h3>
+=======
+                                                        <h3 class="box-product__title"><a href="#" class="box-product__link box-product__link--title"><?php echo $pro_list->name; ?></a></h3>
+>>>>>>> a777fc04dc6bfcdf0c5eea2a773841a6c950ca12
                                                         <p class="box-product__description"><?php echo $pro_list->introduce ?></p>
                                                         <div class="box-product__price"><span class="box-product__new-price"><?php echo number_format($pro_list->price * (100 - $pro_list->discount) / 100) ?>₫</span><span class="box-product__old-price"><?php echo number_format($pro_list->price) ?>₫</span></div>
                                                         <div class="box-product__view-comment">
